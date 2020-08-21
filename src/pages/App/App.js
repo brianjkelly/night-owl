@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import LandingPage from '../LandingPage/LandingPage';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {}
+  }
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">videoRange</header>
+        <Route exact path='/' render={() =>
+          <LandingPage />
+        } />
+      </div>
+    );
+  }
 }
 
 export default App;
