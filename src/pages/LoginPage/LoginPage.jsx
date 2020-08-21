@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './LoginPage.css';
 
-const LoginPage = () => {
-    return (
-        <div classname="LoginPage">
-
-        </div>
-    );
+class LoginPage extends Component {
+    render() {
+        return (
+            <div classname="LoginPage">
+                
+            </div>
+        );
+    }
 }
 
 export default LoginPage;
