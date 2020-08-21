@@ -1,7 +1,8 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './LoginPage.css';
 
-const LoginPage = () => {
+class LoginPage extends Component {
     render() {
         return (
             <div classname="LoginPage">
