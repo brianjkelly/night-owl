@@ -5,6 +5,10 @@ const logger = require('morgan');
 
 const app = express();
 
+// connect to DB with Mongoose
+require('dotenv').config();
+require('./config/database.js');
+
 app.use(logger('dev'));
 app.use(express.json());
 
