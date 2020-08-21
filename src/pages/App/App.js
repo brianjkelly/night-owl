@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
-import userService from '../../../utils/userService'
+import userService from '../../utils/userService'
 
 class App extends Component {
   constructor() {
