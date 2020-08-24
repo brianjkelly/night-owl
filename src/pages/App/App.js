@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService'
+import ChatBox from '../../components/ChatBox/ChatBox';
 
 class App extends Component {
   constructor() {
@@ -26,13 +27,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">videoRange</header>
         <Switch>
           <Route exact path='/' render={() =>
             <LandingPage />
           } />
           <Route exact path='/login' render={() =>
             <LoginPage />
+          } />
+          <Route exact path='/chat' render={() =>
+            <ChatBox />
           } />
         </Switch>
       </div>
