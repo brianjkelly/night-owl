@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
+import VideoRoomPage from '../VideoRoomPage/VideoRoomPage'
 import userService from '../../utils/userService'
 
 class App extends Component {
@@ -23,6 +24,9 @@ class App extends Component {
           } />
           <Route exact path='/login' render={() =>
             <LoginPage />
+          } />
+          <Route exact path='/videoroom' render={() =>
+            <VideoRoomPage />
           } />
         </Switch>
       </div>
