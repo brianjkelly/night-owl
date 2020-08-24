@@ -47,6 +47,8 @@ class App extends Component {
           <Route exact path='/videoroom' render={() =>
             <VideoRoomPage 
               handleFormSubmit={this.handleSubmit}
+              handleVideoSelect={this.handleVideoSelect}
+              videos={this.state.videos}
             />
           } />
         </Switch>
