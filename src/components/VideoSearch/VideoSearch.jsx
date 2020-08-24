@@ -17,20 +17,22 @@ class VideoSearch extends Component {
     }
 
     render() {
-        <div className="VideoSearch">
-            <div className="VideoSearch-header">
-                <h2>Video Search</h2>
+        return(
+            <div className="VideoSearch">
+                <div className="VideoSearch-header">
+                    <h2>Video Search</h2>
+                </div>
+                <form className="VideoSearch-form" onSubmit={this.handleSubmit}>
+                    <input 
+                    type="text" 
+                    name="video-search" 
+                    value={this.state.keyword} 
+                    onChange={this.handleChange} 
+                    />
+                    <button type="submit">Search</button>
+                </form>
             </div>
-            <form className="VideoSearch-form" onSubmit={this.handleSubmit}>
-                <input 
-                type="text" 
-                name="video-search" 
-                value={this.state.keyword} 
-                onChange={this.handleChange} 
-                />
-                <button type="submit">Search</button>
-            </form>
-        </div>
+        );
     }
 }
 
