@@ -4,7 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
-import userService from '../../utils/userService'
+import userService from '../../utils/userService';
+import SignupPage from '../SignupPage/SignupPage';
 
 class App extends Component {
   constructor() {
@@ -29,10 +30,22 @@ class App extends Component {
         <header className="App-header">videoRange</header>
         <Switch>
           <Route exact path='/' render={() =>
-            <LandingPage />
+            <LandingPage 
+            handleLogout={this.handleLogout}  
+            user={this.state.user}
+            />
           } />
-          <Route exact path='/login' render={() =>
-            <LoginPage />
+          <Route exact path='/login' render={({ history }) =>
+            <LoginPage 
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          } />
+          <Route exact path='/signup' render={({ history }) =>
+            <SignupPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
           } />
         </Switch>
       </div>
