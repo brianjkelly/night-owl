@@ -49,6 +49,7 @@ class App extends Component {
               handleFormSubmit={this.handleSubmit}
               handleVideoSelect={this.handleVideoSelect}
               videos={this.state.videos}
+              video={this.state.selectedVideo}
             />
           } />
         </Switch>
