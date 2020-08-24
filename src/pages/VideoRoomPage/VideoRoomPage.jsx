@@ -14,7 +14,7 @@ const VideoRoomPage = (props) => {
                 videos={props.videos}
             />
             <VideoDetail 
-                video={props.selectedVideo}
+                video={props.video}
             />
         </div>
     )
