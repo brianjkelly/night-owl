@@ -3,6 +3,10 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 
+// place routers here
+// const searchRouter = require('./routes/api/searchVideos');
+
+// set up express
 const app = express();
 
 // connect to DB with Mongoose
@@ -17,6 +21,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // place API routes here
+
 
 // place "catch all" route here
 app.get('/*', function(req, res) {
