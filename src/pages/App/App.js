@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import VideoRoomPage from '../VideoRoomPage/VideoRoomPage'
-import youtube from '../../utils/youtube-api';
+import youtubeAPI from '../../utils/youtube-api';
 import userService from '../../utils/userService'
 import SignupPage from '../SignupPage/SignupPage';
 
@@ -22,14 +22,11 @@ class App extends Component {
 
 
   handleSubmit = async (keywordFromSearch) => {
-    const response = await youtube.get('/search', {
-      params: {
-        q: keywordFromSearch
-      }
-    });
+    const response = await youtubeAPI(keywordFromSearch);
+    console.log(response);
     this.setState({
-      videos: response.data.items
-    });
+      videos: response.items
+    })
   }
 
   handleVideoSelect = (video) => {
