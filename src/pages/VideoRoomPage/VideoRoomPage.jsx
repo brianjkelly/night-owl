@@ -6,16 +6,16 @@ import VideoDetail from '../../components/VideoDetail/VideoDetail';
 const VideoRoomPage = (props) => {
     return (
         <div className="VideoRoomPage">
+             <VideoDetail 
+                video={props.video}
+            />
             <VideoSearch 
                 handleFormSubmit={props.handleFormSubmit}
             />
             <VideoList 
                 handleVideoSelect={props.handleVideoSelect}
                 videos={props.videos}
-            />
-            <VideoDetail 
-                video={props.video}
-            />
+            />           
         </div>
     )
 }
