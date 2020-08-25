@@ -34,6 +34,7 @@ class App extends Component {
 
   handleVideoSelect = (video) => {
     this.setState({ selectedVideo: video });
+  }
 
   handleLogout = () => {
     userService.logout();
