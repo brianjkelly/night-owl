@@ -5,7 +5,7 @@ const logger = require('morgan');
 const cors = require('cors')
 
 // place routers here
-
+const videoRouter = require('./routes/api/videos');
 
 // set up express
 const app = express();
@@ -18,7 +18,6 @@ require('./config/database.js');
 
 
 // configure serve-favicon and static middlewares to 'build' folder
-
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
@@ -26,7 +25,8 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // place API routes here
-
+app.use('/api/videos', videoRouter);
+app.use('/api/users', require('./routes/api/users'));
 
 // place "catch all" route here
 app.get('/*', function (req, res) {
@@ -37,6 +37,7 @@ app.get('/*', function (req, res) {
 const server = app.listen(port, () => {
     console.log(`Express app running on port:${port}`);
 });
+
 // Establish socket.io connection
 const io = require('socket.io').listen(server);
 io.sockets.on('connection', (socket) => {
