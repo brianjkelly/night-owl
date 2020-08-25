@@ -7,6 +7,8 @@ import LoginPage from '../LoginPage/LoginPage';
 import VideoRoomPage from '../VideoRoomPage/VideoRoomPage'
 import youtube from '../../utils/youtube-api';
 import userService from '../../utils/userService'
+import SignupPage from '../SignupPage/SignupPage';
+
 
 class App extends Component {
   constructor() {
@@ -17,6 +19,7 @@ class App extends Component {
       selectedVideo: null
     }
   }
+
 
   handleSubmit = async (keywordFromSearch) => {
     const response = await youtube.get('/search', {
@@ -31,6 +34,15 @@ class App extends Component {
 
   handleVideoSelect = (video) => {
     this.setState({ selectedVideo: video });
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  }
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: userService.getUser() });
+
   }
 
   render() {
@@ -39,10 +51,22 @@ class App extends Component {
         <header className="App-header">videoRange</header>
         <Switch>
           <Route exact path='/' render={() =>
-            <LandingPage />
+            <LandingPage 
+            handleLogout={this.handleLogout}  
+            user={this.state.user}
+            />
           } />
-          <Route exact path='/login' render={() =>
-            <LoginPage />
+          <Route exact path='/login' render={({ history }) =>
+            <LoginPage 
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          } />
+          <Route exact path='/signup' render={({ history }) =>
+            <SignupPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
           } />
           <Route exact path='/videoroom' render={() =>
             <VideoRoomPage 
