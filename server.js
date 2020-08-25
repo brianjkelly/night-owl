@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // place API routes here
 app.use('/api/videos', videoRouter);
+app.use('/api/users', require('./routes/api/users'));
 
 // place "catch all" route here
 app.get('/*', function (req, res) {
