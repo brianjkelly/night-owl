@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // const KEY = process.env.API_KEY
 
-const KEY = "AIzaSyAPRVWL4A_0cBlL6tvPHLgYUfFL3pGvAgg"
+const KEY = proccess.env.API_KEY;
 
 export default axios.create({
     baseURL: "https://www.googleapis.com/youtube/v3/",
@@ -15,6 +15,6 @@ export default axios.create({
         videoEmbeddable: "true",
         order: "viewCount",
         key: KEY
-        
+
     }
 });
