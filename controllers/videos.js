@@ -30,9 +30,4 @@ async function search(req, res) {
     } catch (error) {
         res.status(400).json(error);
     }
-    // ).then(response => {
-    //     return (response);
-    // }).catch(error => {
-    //     console.log(error);
-    // })
 }
