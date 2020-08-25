@@ -2,20 +2,22 @@ import React from 'react';
 import VideoSearch from '../../components/VideoSearch/VideoSearch';
 import VideoList from '../../components/VideoList/VideoList';
 import VideoDetail from '../../components/VideoDetail/VideoDetail';
+import ChatBox from '../../components/ChatBox/ChatBox';
 
 const VideoRoomPage = (props) => {
     return (
         <div className="VideoRoomPage">
-             <VideoDetail 
+            <VideoDetail
                 video={props.video}
             />
-            <VideoSearch 
+            <VideoSearch
                 handleFormSubmit={props.handleFormSubmit}
             />
-            <VideoList 
+            <VideoList
                 handleVideoSelect={props.handleVideoSelect}
                 videos={props.videos}
-            />           
+            />
+            <ChatBox />
         </div>
     )
 }

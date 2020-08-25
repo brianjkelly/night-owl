@@ -1,5 +1,3 @@
-import { get } from "mongoose";
-
 export default {
     setToken,
     getToken,
@@ -7,7 +5,7 @@ export default {
     removeToken,
 }
 
-function removeToken () {
+function removeToken() {
     localStorage.removeItem('token');
 }
 
@@ -33,7 +31,7 @@ function getToken() {
     return token;
 }
 
-function getUserFromToken () {
+function getUserFromToken() {
     const token = getToken();
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
