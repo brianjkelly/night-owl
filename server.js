@@ -2,13 +2,19 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const cors = require('cors');
 
+// place routers here
+
+
+// set up express
 const app = express();
 
 // connect to DB with Mongoose
 require('dotenv').config();
 require('./config/database.js');
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 
@@ -18,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // place API routes here
 app.use('/api/users', require('./routes/api/users'));
+
 
 // place "catch all" route here
 app.get('/*', function(req, res) {
