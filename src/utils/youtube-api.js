@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-// const KEY = process.env.API_KEY
-
 const KEY = "AIzaSyAPRVWL4A_0cBlL6tvPHLgYUfFL3pGvAgg"
 
 export default axios.create({
@@ -14,7 +12,6 @@ export default axios.create({
         videoDefinition: "high",
         videoEmbeddable: "true",
         order: "viewCount",
-        key: KEY
-        
+        key: KEY   
     }
 });
