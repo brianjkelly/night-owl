@@ -35,7 +35,7 @@ class App extends Component {
   handleVideoSelect = (video) => {
     this.setState({ selectedVideo: video });
   }
-
+  
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -49,16 +49,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">videoRange</header>
         <Switch>
           <Route exact path='/' render={() =>
-            <LandingPage 
-            handleLogout={this.handleLogout}  
-            user={this.state.user}
+            <LandingPage
+              handleLogout={this.handleLogout}
+              user={this.state.user}
             />
           } />
           <Route exact path='/login' render={({ history }) =>
-            <LoginPage 
+            <LoginPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
@@ -70,7 +69,7 @@ class App extends Component {
             />
           } />
           <Route exact path='/videoroom' render={() =>
-            <VideoRoomPage 
+            <VideoRoomPage
               handleFormSubmit={this.handleSubmit}
               handleVideoSelect={this.handleVideoSelect}
               videos={this.state.videos}

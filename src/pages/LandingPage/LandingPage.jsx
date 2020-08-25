@@ -7,13 +7,13 @@ import NavBar from '../../components/NavBar/NavBar';
 const LandingPage = (props) => {
     return (
         <div className="LandingPage">
-            <NavBar 
+            <NavBar
                 user={props.user}
                 handleLogout={props.handleLogout}
             />
-            
-                
-           
+
+
+
         </div>
     );
 }
