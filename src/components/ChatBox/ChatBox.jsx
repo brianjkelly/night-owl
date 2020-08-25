@@ -20,6 +20,7 @@ const ChatRoom = (props) => {
         socket.on('chat message', msg => {
             setHistory(msgHistory => [...msgHistory, msg]);
         });
+        
     }, []);
 
     const sendMessage = (e) => {
