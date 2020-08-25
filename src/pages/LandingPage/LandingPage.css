@@ -1,0 +1,16 @@
+.LandingPage-link-margin {
+    margin-bottom: 10px;
+  }
+  
+  .LandingPage {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .LandingPage-controls {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+  

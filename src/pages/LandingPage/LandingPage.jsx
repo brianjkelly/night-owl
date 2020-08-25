@@ -1,11 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../../components/NavBar/NavBar';
 
-const LandingPage = () => {
+
+
+const LandingPage = (props) => {
     return (
-        <div classname="LandingPage">
-            <div> Landing Page </div>
-            <Link to='/chat'>Chat now</Link>
+        <div className="LandingPage">
+            <NavBar
+                user={props.user}
+                handleLogout={props.handleLogout}
+            />
+
+
+
         </div>
     );
 }

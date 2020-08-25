@@ -4,6 +4,10 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cors = require('cors')
 
+// place routers here
+
+
+// set up express
 const app = express();
 
 const port = 3001
@@ -22,6 +26,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // place API routes here
+
 
 // place "catch all" route here
 app.get('/*', function (req, res) {
