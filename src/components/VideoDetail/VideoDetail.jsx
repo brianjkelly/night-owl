@@ -5,12 +5,12 @@ const VideoDetail = ({video}) => {
         return <div>No Video Selected</div>;
     }
 
-    const videoSrc = `https://www.youtube.com/embed/${video.etag}`;
+    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
     
     return (
         <div>
             <div className="video-embedded">
-                <iframe src={videoSrc} allowFullScreen title="Video Player"/>
+                <iframe src={videoSrc} width="960" height="520" allowFullScreen title="Video Player" frameBorder="0" />
             </div>
             <div className="video-segment">
                 <h4 className="video-player-header">{video.snippet.title}</h4>
