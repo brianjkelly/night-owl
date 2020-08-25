@@ -25,8 +25,8 @@ async function search(req, res) {
                     key: KEY
                 }
             });
-        // console.log(response);
-        res.json(response);
+        console.log(response);
+        res.json(response.data);
     } catch (error) {
         res.status(400).json(error);
     }
