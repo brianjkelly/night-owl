@@ -26,7 +26,7 @@ async function search(req, res) {
                 }
             });
         console.log(response);
-        res.json(response);
+        res.json(response.data);
     } catch (error) {
         res.status(400).json(error);
     }
