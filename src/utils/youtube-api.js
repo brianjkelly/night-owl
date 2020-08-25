@@ -9,6 +9,12 @@ export default axios.create({
     params: {
         part: "snippet",
         maxResults: 5,
+        id: { kind: "youtube#video" },
+        type: "video",
+        videoDefinition: "high",
+        videoEmbeddable: "true",
+        order: "viewCount",
         key: KEY
+        
     }
 });
