@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class VideoSearch extends Component {
     state = {
-        keyword: 'Enter Keyword'
+        keyword: 'Enter Search Keyword'
     }
     // create function for handling changes
     handleChange = (e) => {

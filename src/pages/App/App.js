@@ -16,10 +16,23 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      loadedVideo: null,
+      queue: []
     }
   }
 
+  handlePlayBtn = (e) => {
+    e.preventDefault();
+    const loadedVideo = this.state.selectedVideo
+    this.setState({ loadedVideo })
+  }
+
+  handleAddToQ = (e) => {
+    e.preventDefault();
+    const queue = [...this.state.queue, this.state.selectedVideo]
+    this.setState({ queue })
+  }
 
   handleSubmit = async (keywordFromSearch) => {
     const response = await youtubeAPI(keywordFromSearch);
@@ -70,7 +83,10 @@ class App extends Component {
               handleFormSubmit={this.handleSubmit}
               handleVideoSelect={this.handleVideoSelect}
               videos={this.state.videos}
-              video={this.state.selectedVideo}
+              selectedVideo={this.state.selectedVideo}
+              handleAddToQ={this.handleAddToQ}
+              handlePlayBtn={this.handlePlayBtn}
+              loadedVideo={this.state.loadedVideo}
             />
           } />
         </Switch>
