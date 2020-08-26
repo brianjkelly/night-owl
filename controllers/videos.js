@@ -19,7 +19,6 @@ async function search(req, res) {
                     videoDefinition: "high",
                     videoEmbeddable: "true",
                     order: "viewCount",
-                    // q: "daddy",
                     key: KEY
                 }
             });

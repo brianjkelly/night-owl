@@ -6,6 +6,7 @@ const VideoDetail = ({ video }) => {
     }
 
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}?autoplay=1`;
+
     
     return (
         <div>
