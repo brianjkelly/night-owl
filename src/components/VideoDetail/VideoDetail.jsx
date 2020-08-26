@@ -13,11 +13,10 @@ const VideoDetail = ({ loadedVideo }) => {
                 loadedVideo = {loadedVideo}
             />
             <div className="video-segment">
-                <h4 className="video-player-header">{loadedVideo.snippet.title}</h4>
-                <p>{loadedVideo.snippet.description}</p>
+                <div className="video-player-header">{loadedVideo.snippet.title}</div>
+                <div>{loadedVideo.snippet.description}</div>
             </div>
         </div>
-
     )
 }
 
