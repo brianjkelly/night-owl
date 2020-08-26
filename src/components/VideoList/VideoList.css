@@ -1,0 +1,4 @@
+.VideoList {
+    display: flex;
+    flex-wrap: wrap;
+}
