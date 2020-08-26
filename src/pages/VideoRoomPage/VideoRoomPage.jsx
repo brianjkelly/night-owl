@@ -8,7 +8,7 @@ const VideoRoomPage = (props) => {
     return (
         <div className="VideoRoomPage">
             <VideoDetail
-                video={props.video}
+                loadedVideo={props.loadedVideo}
             />
             <VideoSearch
                 handleFormSubmit={props.handleFormSubmit}
@@ -16,7 +16,10 @@ const VideoRoomPage = (props) => {
             <VideoList
                 handleVideoSelect={props.handleVideoSelect}
                 videos={props.videos}
-                selectedVideo={props.video}
+                selectedVideo={props.selectedVideo}
+                handleAddToQ={props.handleAddToQ}
+                handlePlayBtn={props.handlePlayBtn}
+                loadedVideo={props.loadedVideo}
             />
             <ChatBox />
         </div>
