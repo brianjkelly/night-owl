@@ -21,8 +21,10 @@ class App extends Component {
     }
   }
 
-  handleAddToQ = (video) => {
-    this.setState({  })
+  handleAddToQ = (e) => {
+    e.preventDefault();
+    const queue = [...this.state.queue, this.state.selectedVideo]
+    this.setState({ queue })
   }
 
   handleSubmit = async (keywordFromSearch) => {
@@ -75,6 +77,7 @@ class App extends Component {
               handleVideoSelect={this.handleVideoSelect}
               videos={this.state.videos}
               video={this.state.selectedVideo}
+              handleAddToQ={this.handleAddToQ}
             />
           } />
         </Switch>

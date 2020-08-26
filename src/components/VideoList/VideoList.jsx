@@ -2,7 +2,7 @@ import React from 'react';
 import VideoItem from '../VideoItem/VideoItem';
 import QuButton from '../QuButton/QuButton';
 
-const VideoList = ({ videos , handleVideoSelect, selectedVideo }) => {
+const VideoList = ({ videos , handleVideoSelect, selectedVideo, handleAddToQ }) => {
     const renderedVideos = videos.map((video) => {
         return (
             <div>
@@ -15,6 +15,7 @@ const VideoList = ({ videos , handleVideoSelect, selectedVideo }) => {
                 <QuButton
                     video={video}
                     selectedVideo={selectedVideo}
+                    handleAddToQ={handleAddToQ}
                 />
             </div>
         )
