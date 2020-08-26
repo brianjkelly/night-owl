@@ -16,10 +16,14 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      queue: []
     }
   }
 
+  handleAddToQ = (video) => {
+    this.setState({  })
+  }
 
   handleSubmit = async (keywordFromSearch) => {
     const response = await youtubeAPI(keywordFromSearch);

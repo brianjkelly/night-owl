@@ -16,6 +16,7 @@ const VideoRoomPage = (props) => {
             <VideoList
                 handleVideoSelect={props.handleVideoSelect}
                 videos={props.videos}
+                selectedVideo={props.video}
             />
             <ChatBox />
         </div>
