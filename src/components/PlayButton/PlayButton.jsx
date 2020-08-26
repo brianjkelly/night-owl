@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlayButton = ({ video, selectedVideo, handlePlayBtn, loadedVideo }) => {
+const PlayButton = ({ video, selectedVideo, handlePlayBtn }) => {
     if (video === selectedVideo) {
         return (
             <div className="PlayButton">

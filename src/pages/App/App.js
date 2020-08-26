@@ -18,8 +18,31 @@ class App extends Component {
       videos: [],
       selectedVideo: null,
       loadedVideo: null,
-      queue: []
+      queue: [],
+      quSelectedVideo: null
     }
+  }
+
+  handleQuPlayBtn = (e) => {
+    e.preventDefault();
+    const loadedVideo = this.state.quSelectedVideo
+    this.setState({ loadedVideo })
+  }
+
+  handleRemoveFromQ = (e) => {
+    e.preventDefault();
+    const queue = [...this.state.queue];
+    for (var i = queue.length - 1; i >= 0; --i) {
+      if (queue[i] === this.state.quSelectedVideo) {
+        queue.splice(i,1);
+      }
+    }
+    this.setState({ queue })
+    this.setState({ quSelectedVideo: null })
+  }
+
+  handleQuVideoSelect = (qVideo) => {
+    this.setState({ quSelectedVideo: qVideo });
   }
 
   handlePlayBtn = (e) => {
@@ -87,6 +110,11 @@ class App extends Component {
               handleAddToQ={this.handleAddToQ}
               handlePlayBtn={this.handlePlayBtn}
               loadedVideo={this.state.loadedVideo}
+              handleQuVideoSelect={this.handleQuVideoSelect}
+              queue={this.state.queue}
+              quSelectedVideo={this.state.quSelectedVideo}
+              handleRemoveFromQ={this.handleRemoveFromQ}
+              handleQuPlayBtn={this.handleQuPlayBtn}
             />
           } />
         </Switch>
