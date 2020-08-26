@@ -25,6 +25,8 @@ const VideoRoomPage = (props) => {
             <VideoQuList 
                 queue={props.queue}
                 handleQuVideoSelect={props.handleQuVideoSelect}
+                quSelectedVideo={props.quSelectedVideo}
+                handleRemoveFromQ={props.handleRemoveFromQ}
             />
             <ChatBox />
         </div>
