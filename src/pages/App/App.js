@@ -18,8 +18,13 @@ class App extends Component {
       videos: [],
       selectedVideo: null,
       loadedVideo: null,
-      queue: []
+      queue: [],
+      quSelectedVideo: null
     }
+  }
+
+  handleQuVideoSelect = (qVideo) => {
+    this.setState({ quSelectedVideo: qVideo });
   }
 
   handlePlayBtn = (e) => {
@@ -87,6 +92,8 @@ class App extends Component {
               handleAddToQ={this.handleAddToQ}
               handlePlayBtn={this.handlePlayBtn}
               loadedVideo={this.state.loadedVideo}
+              handleQuVideoSelect={this.handleQuVideoSelect}
+              queue={this.state.queue}
             />
           } />
         </Switch>

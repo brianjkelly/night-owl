@@ -17,7 +17,6 @@ const VideoDetail = ({ loadedVideo }) => {
                 <div>{loadedVideo.snippet.description}</div>
             </div>
         </div>
-
     )
 }
 

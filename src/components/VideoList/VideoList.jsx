@@ -3,7 +3,7 @@ import VideoItem from '../VideoItem/VideoItem';
 import QuButton from '../QuButton/QuButton';
 import PlayButton from '../PlayButton/PlayButton';
 
-const VideoList = ({ videos , handleVideoSelect, selectedVideo, handleAddToQ, handlePlayBtn, loadedVideo }) => {
+const VideoList = ({ videos, handleVideoSelect, selectedVideo, handleAddToQ, handlePlayBtn, loadedVideo }) => {
     const renderedVideos = videos.map((video) => {
         return (
             <div>
@@ -28,7 +28,12 @@ const VideoList = ({ videos , handleVideoSelect, selectedVideo, handleAddToQ, ha
         )
     });
 
-    return <div className="VideoList">{renderedVideos}</div>;
+    return (
+        <div>
+            <h2>Video List</h2>
+            <div className="VideoList">{renderedVideos}</div>
+        </div>
+    )
 
 }
 
