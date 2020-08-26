@@ -23,6 +23,12 @@ class App extends Component {
     }
   }
 
+  handleQuPlayBtn = (e) => {
+    e.preventDefault();
+    const loadedVideo = this.state.quSelectedVideo
+    this.setState({ loadedVideo })
+  }
+
   handleRemoveFromQ = (e) => {
     e.preventDefault();
     const queue = [...this.state.queue];
@@ -108,6 +114,7 @@ class App extends Component {
               queue={this.state.queue}
               quSelectedVideo={this.state.quSelectedVideo}
               handleRemoveFromQ={this.handleRemoveFromQ}
+              handleQuPlayBtn={this.handleQuPlayBtn}
             />
           } />
         </Switch>

@@ -1,8 +1,9 @@
 import React from 'react';
 import QuItem from '../QuItem/QuItem';
 import RemoveButton from '../RemoveButton/RemoveButton';
+import QuPlayButton from '../QuPlayButton/QuPlayButton';
 
-const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemoveFromQ }) => {
+const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemoveFromQ, handleQuPlayBtn }) => {
     const queuedVideos = queue.map((qVideo) => {
         return(
             <div>
@@ -15,6 +16,11 @@ const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemove
                qVideo={qVideo}
                quSelectedVideo={quSelectedVideo}
                handleRemoveFromQ={handleRemoveFromQ}
+               />
+               <QuPlayButton 
+               qVideo={qVideo}
+               quSelectedVideo={quSelectedVideo}
+               handleQuPlayBtn={handleQuPlayBtn}
                />
             </div>
         )
