@@ -1,4 +1,5 @@
 import React from 'react';
+import './QuItem.css';
 
 const QuItem = ({ qVideo, handleQuVideoSelect }) => {
 

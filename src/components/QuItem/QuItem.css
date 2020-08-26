@@ -1,0 +1,56 @@
+.q-video-item {
+    display: grid;
+    grid: auto / 120px 200px;
+    grid-column-gap: 4px;
+
+    margin-bottom: 4px;
+}
+
+.q-video-image-container {
+    position: relative;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.q-time-label {
+    position: absolute;
+    background:#111111;
+    bottom: 0;
+    right: 0;
+    opacity: 0.8;
+    border-radius: 2px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 4px;
+    padding: 2px 4px;
+    line-height: 12px;
+}
+
+.q-video-info {
+    color: #111111;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+.q-video-preview-container {
+    padding-top: 5px;
+    font-size: 13px;
+    color: #6E6E6E;
+
+}
+
+.q-channel-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.show-max-two-lines {
+    overflow: hidden;
+    line-height: 1.4em;
+    max-height: 2.8em;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
