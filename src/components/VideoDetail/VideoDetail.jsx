@@ -1,21 +1,20 @@
 import React from 'react';
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
-const VideoDetail = ({ video }) => {
-    if (!video) {
-        return <div>No Video Selected</div>;
+const VideoDetail = ({ loadedVideo }) => { 
+
+    if (!loadedVideo) {
+        return <div>No Video Loaded</div>;
     }
 
-    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}?autoplay=1`;
-
-    
     return (
         <div>
-            <div className="video-embedded">
-                <iframe src={videoSrc} type="text/html" width="960" height="520" allowFullScreen title="Video Player" frameBorder="0" />
-            </div>
+            <VideoPlayer 
+                loadedVideo = {loadedVideo}
+            />
             <div className="video-segment">
-                <h4 className="video-player-header">{video.snippet.title}</h4>
-                <p>{video.snippet.description}</p>
+                <h4 className="video-player-header">{loadedVideo.snippet.title}</h4>
+                <p>{loadedVideo.snippet.description}</p>
             </div>
         </div>
 

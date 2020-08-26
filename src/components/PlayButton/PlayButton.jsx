@@ -1,10 +1,10 @@
 import React from 'react';
 
-const PlayButton = ({ video, selectedVideo }) => {
+const PlayButton = ({ video, selectedVideo, handlePlayBtn, loadedVideo }) => {
     if (video === selectedVideo) {
         return (
             <div className="PlayButton">
-                <form className="PlayButton-form" onSubmit="">
+                <form className="PlayButton-form" onSubmit={handlePlayBtn}>
                     <button type="submit">Play Video</button>
                 </form>
             </div>

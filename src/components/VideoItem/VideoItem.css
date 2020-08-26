@@ -1,0 +1,15 @@
+.video-item {
+    display: grid;
+    grid: 118px auto / 210px;
+}
+
+.video-image-container {
+    position: relative;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.video-content {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
