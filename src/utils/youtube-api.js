@@ -1,5 +1,3 @@
-
-
 const youtubeApi = (keyword) => {
     return fetch("/api/videos/search?q=" + keyword, {
         method: "GET",

@@ -17,6 +17,7 @@ const VideoRoomPage = (props) => {
                 handleVideoSelect={props.handleVideoSelect}
                 videos={props.videos}
                 selectedVideo={props.video}
+                handleAddToQ={props.handleAddToQ}
             />
             <ChatBox />
         </div>
