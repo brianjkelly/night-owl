@@ -13,6 +13,7 @@
 .q-title {
     font-size: 1.2rem;
     font-weight: bold;
+    margin-right: 18px;
 }
 
 .q-rmv-btn, .q-video-play-btn {
