@@ -7,8 +7,11 @@ const cors = require('cors')
 
 // set up express
 const app = express();
-
 const port = 3001
+
+// user list set up
+
+const users = {};
 
 // connect to DB with Mongoose
 require('dotenv').config();
@@ -41,6 +44,18 @@ const server = app.listen(port, () => {
 const io = require('socket.io').listen(server);
 io.sockets.on('connection', (socket) => {
     console.log('user connected');
+
+    socket.on('register-user', function(name) {
+        console.log(name);
+        users[socket.id] = name;
+        io.emit('update-user-list', Object.values(users));
+    });
+
+    socket.on('disconnect', function() {
+        delete users[socket.id];
+        io.emit('update-user-list', Object.values(users));
+    });
+
     socket.on('join', ({ user, room }, error) => {
         console.log(`${user} attempting to join ${room}`);
         socket.join(room);

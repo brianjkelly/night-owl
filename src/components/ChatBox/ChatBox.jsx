@@ -9,6 +9,7 @@ let socket;
 const ChatRoom = (props) => {
     const [msg, setMsg] = useState('');
     const [msgHistory, setHistory] = useState([]);
+    const usernames = useState([])
 
     useEffect(() => {
         const user = props.user;
@@ -18,10 +19,14 @@ const ChatRoom = (props) => {
             console.log(error);
         });
         socket.on('chat message', msg => {
-            setHistory(msgHistory => [...msgHistory, msg]);
+            setHistory(msgHistory => [...msgHistory, user + ": " + msg]);
         });
 
+        socket.emit('register-user', user);
+
     }, [props.roomId]);
+
+
 
     const sendMessage = (e) => {
         e.preventDefault();

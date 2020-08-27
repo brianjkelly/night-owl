@@ -39,8 +39,6 @@ class Lobby extends React.Component {
                 user={this.props.user}
                 handleLogout={this.props.handleLogout}
                 />
-                <button className="create-button" onClick={this.handleRoomCreate}>Create Room</button>
-               <span className="title">Room ID:</span>
                <form className="room-id-form" onSubmit={this.handleSubmit}>
                     <input
                         type="text"
@@ -49,8 +47,10 @@ class Lobby extends React.Component {
                         onChange={this.handleChange}
                         onClick={this.handleInputClick}
                     />
-                    <button type="submit">Connect</button>
+                    <button className="room-button" type="submit">Connect</button>
                </form>
+               <br></br>
+                <button className="create-button" onClick={this.handleRoomCreate}>Create Room</button>
             </div>
         );
     }
