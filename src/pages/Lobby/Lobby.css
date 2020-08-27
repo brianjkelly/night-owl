@@ -1,0 +1,18 @@
+
+.LobbyPage {
+    display: flex;
+    margin-top: 300px;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+
+.create-button {
+    border: 0.4rem outset grey;
+    border-radius: 12px;
+    margin: 0.1rem;
+    padding: 0.1rem;
+    outline-offset: 0.1rem;
+  }
