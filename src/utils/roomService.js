@@ -20,19 +20,32 @@ function queueVideo(id, video) {
     });
 }
 
-function deleteQueueVideo(id, data) {
+function deleteQueueVideo(id, payload) {
     return fetch(`/api/rooms/${id}/delete`, {
         method: 'DELETE',
         headers: new Headers({ 'Content-Type': 'application/json' }),
-        body: JSON.stringify(data)
+        body: JSON.stringify(payload)
     }).then(res => {
         if (res.ok) return res.json();
         throw new Error('Could not delete from queue');
     });
 }
 
+function updateLoadedVideo(id, video) {
+    return fetch(`/api/rooms/${id}/`, {
+        method: 'PATCH',
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify(video)
+    }).then(res => {
+        if (res.ok) return res.json();
+        throw new Error('Could not update loaded video');
+    });
+}
+
+
 export default {
     createRoom,
     queueVideo,
-    deleteQueueVideo
+    deleteQueueVideo,
+    updateLoadedVideo
 };

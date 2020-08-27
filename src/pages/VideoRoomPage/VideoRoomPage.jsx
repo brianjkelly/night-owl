@@ -25,6 +25,7 @@ class VideoRoomPage extends React.Component {
 
     handleRemoveFromQ = async (e) => {
         e.preventDefault();
+
         let payload = {};
         payload.idx = e.target[0].value;
         payload.video = this.state.quSelectedVideo;
@@ -36,17 +37,25 @@ class VideoRoomPage extends React.Component {
         this.setState({ quSelectedVideo: null });
     }
 
-    handlePlayBtn = (e) => {
+    handlePlayBtn = async (e) => {
         e.preventDefault();
-        const loadedVideo = this.state.selectedVideo
+
+        const response = await roomService.updateLoadedVideo(this.state.roomId, this.state.selectedVideo);
+        const loadedVideo = response.loadedVideo;
         this.setState({ loadedVideo })
     }
 
     handleAddToQ = async (e) => {
         e.preventDefault();
+
         const response = await roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
         const queue = [...response.queue];
+
         this.setState({ queue });
+    }
+
+    handleVideoSelect = (video) => {
+        this.setState({ selectedVideo: video });
     }
 
     handleFormSubmit = async (keywordFromSearch) => {
@@ -54,10 +63,6 @@ class VideoRoomPage extends React.Component {
         this.setState({
             videos: response.items
         });
-    }
-
-    handleVideoSelect = (video) => {
-        this.setState({ selectedVideo: video });
     }
 
     componentDidMount() {

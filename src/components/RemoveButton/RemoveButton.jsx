@@ -1,10 +1,10 @@
 import React from 'react';
 
-const RemoveButton = ({ handleRemoveFromQ }) => {
+const RemoveButton = ({ idx, handleRemoveFromQ }) => {
     return (
         <div className="RemoveButton">
             <form className="RemoveButton-form" onSubmit={handleRemoveFromQ}>
-                <button type="submit">Remove from Queue</button>
+                <button type="submit" value={idx}>Remove from Queue</button>
             </form>
         </div>
     );
