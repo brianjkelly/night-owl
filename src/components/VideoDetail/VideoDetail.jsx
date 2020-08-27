@@ -2,7 +2,7 @@ import React from 'react';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import VideoInfobox from '../VideoInfobox/VideoInfobox';
 
-const VideoDetail = ({ loadedVideo }) => { 
+const VideoDetail = ({ loadedVideo }) => {
 
     if (!loadedVideo) {
         return <div>No Video Loaded</div>;
