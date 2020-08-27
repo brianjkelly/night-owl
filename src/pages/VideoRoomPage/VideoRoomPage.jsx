@@ -8,26 +8,30 @@ import ChatBox from '../../components/ChatBox/ChatBox';
 const VideoRoomPage = (props) => {
     return (
         <div className="VideoRoomPage">
-            <VideoDetail
-                loadedVideo={props.loadedVideo}
-            />
             <VideoSearch
                 handleFormSubmit={props.handleFormSubmit}
             />
-            <VideoList
-                handleVideoSelect={props.handleVideoSelect}
-                videos={props.videos}
-                selectedVideo={props.selectedVideo}
-                handleAddToQ={props.handleAddToQ}
-                handlePlayBtn={props.handlePlayBtn}
+            <div className="video-display">
+                <div className="video-grid-container">
+                    <VideoList
+                        handleVideoSelect={props.handleVideoSelect}
+                        videos={props.videos}
+                        selectedVideo={props.selectedVideo}
+                        handleAddToQ={props.handleAddToQ}
+                        handlePlayBtn={props.handlePlayBtn}
+                        loadedVideo={props.loadedVideo}
+                    />
+                    <VideoQuList 
+                        queue={props.queue}
+                        handleQuVideoSelect={props.handleQuVideoSelect}
+                        quSelectedVideo={props.quSelectedVideo}
+                        handleRemoveFromQ={props.handleRemoveFromQ}
+                        handleQuPlayBtn={props.handleQuPlayBtn}
+                    />
+                </div>
+            </div>
+            <VideoDetail
                 loadedVideo={props.loadedVideo}
-            />
-            <VideoQuList 
-                queue={props.queue}
-                handleQuVideoSelect={props.handleQuVideoSelect}
-                quSelectedVideo={props.quSelectedVideo}
-                handleRemoveFromQ={props.handleRemoveFromQ}
-                handleQuPlayBtn={props.handleQuPlayBtn}
             />
             <ChatBox />
         </div>

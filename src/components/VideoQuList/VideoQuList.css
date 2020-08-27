@@ -2,3 +2,13 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.q-video-grid-header {
+    padding-bottom: 24px;
+    padding-top: 14px;
+}
+
+.q-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
