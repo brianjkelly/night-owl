@@ -10,10 +10,12 @@ const LandingPage = (props) => {
     return (
         <div className="LandingPage">
             <div><NightOwlLogo /></div>
-            <NavBar
-                user={props.user}
-                handleLogout={props.handleLogout}
-            />
+            <div>
+                <NavBar
+                    user={props.user}
+                    handleLogout={props.handleLogout}
+                />
+            </div>
         </div>
     );
 }
