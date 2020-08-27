@@ -1,5 +1,4 @@
 function createRoom(leader) {
-    console.log(leader.name);
     return fetch('/api/rooms/', {
         method: 'POST',
         headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -10,7 +9,18 @@ function createRoom(leader) {
     });
 }
 
+function queueVideo(id, video) {
+    return fetch(`/api/rooms/${id}/queue-video`, {
+        method: 'POST',
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify(video)
+    }).then(res => {
+        if (res.ok) return res.json();
+        throw new Error('Could not add to queue');
+    });
+}
 
 export default {
     createRoom,
+    queueVideo
 };
