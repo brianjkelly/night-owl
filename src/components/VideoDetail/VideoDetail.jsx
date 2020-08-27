@@ -16,7 +16,6 @@ const VideoDetail = ({ loadedVideo }) => {
                     />
                     <VideoMetadata 
                         className="video-metadata" 
-                        viewCount={1000}
                         loadedVideo = {loadedVideo}
                         />
                     <VideoInfobox 
