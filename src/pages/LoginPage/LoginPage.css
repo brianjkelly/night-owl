@@ -8,17 +8,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(7, 177, 131, 0.659);
 }
-
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 
 .link {
-  color: royalblue;
+  color: white;
   font-weight: bold;
   cursor: pointer;
 }
