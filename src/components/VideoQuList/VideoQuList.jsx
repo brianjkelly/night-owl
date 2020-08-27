@@ -5,24 +5,25 @@ import QuPlayButton from '../QuPlayButton/QuPlayButton';
 import './VideoQuList.css';
 
 const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemoveFromQ, handleQuPlayBtn }) => {
-    const queuedVideos = queue.map((qVideo) => {
-        return(
-            <div>
-               <QuItem 
-                key={qVideo.id.videoId}
-                qVideo={qVideo}
-                handleQuVideoSelect={handleQuVideoSelect}
-               /> 
-               <RemoveButton 
-               qVideo={qVideo}
-               quSelectedVideo={quSelectedVideo}
-               handleRemoveFromQ={handleRemoveFromQ}
-               />
-               <QuPlayButton 
-               qVideo={qVideo}
-               quSelectedVideo={quSelectedVideo}
-               handleQuPlayBtn={handleQuPlayBtn}
-               />
+    const queuedVideos = queue.map((qVideo, idx) => {
+        return (
+            <div key={'video-' + idx}>
+                <QuItem
+                    key={qVideo.id.videoId}
+                    qVideo={qVideo}
+                    handleQuVideoSelect={handleQuVideoSelect}
+                />
+                <RemoveButton
+                    idx={idx}
+                    qVideo={qVideo}
+                    quSelectedVideo={quSelectedVideo}
+                    handleRemoveFromQ={handleRemoveFromQ}
+                />
+                <QuPlayButton
+                    qVideo={qVideo}
+                    quSelectedVideo={quSelectedVideo}
+                    handleQuPlayBtn={handleQuPlayBtn}
+                />
             </div>
         )
     });
@@ -33,7 +34,7 @@ const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemove
                 <span className="q-title">Queue List</span>
             </div>
             <div className="QueueList">{queuedVideos}</div>
-        </div>        
+        </div>
     )
 }
 
