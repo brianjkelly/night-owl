@@ -5,6 +5,11 @@
 
     margin-left: 4px;
     margin-bottom: 24px;
+
+    padding: 4px; 
+
+    background-color: #ADBCA5;
+    border-radius: 5px;
 }
 
 .q-video-image-container {

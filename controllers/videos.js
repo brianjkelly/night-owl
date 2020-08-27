@@ -13,7 +13,7 @@ async function search(req, res) {
             rootURL, {
             params: {
                 part: "snippet",
-                maxResults: 5,
+                maxResults: 6,
                 id: { kind: "youtube#video" },
                 type: "video",
                 videoDefinition: "high",

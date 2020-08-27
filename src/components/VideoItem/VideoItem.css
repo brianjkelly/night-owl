@@ -4,6 +4,11 @@
 
     margin-left: 4px;
     margin-bottom: 24px;
+
+    padding: 4px; 
+
+    background-color: #9FB196;
+    border-radius: 5px;
 }
 
 .video-image-container {
