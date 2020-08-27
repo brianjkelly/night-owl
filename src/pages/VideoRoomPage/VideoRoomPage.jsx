@@ -5,17 +5,21 @@ import VideoQuList from '../../components/VideoQuList/VideoQuList';
 import VideoDetail from '../../components/VideoDetail/VideoDetail';
 import youtubeAPI from '../../utils/youtube-api';
 import ChatBox from '../../components/ChatBox/ChatBox';
+import roomService from '../../utils/roomService';
 
 class VideoRoomPage extends React.Component {
     constructor() {
         super();
         this.state = {
             roomId: null,
+            leader: null,
+            userList: null,
             videos: [],
             selectedVideo: null,
             loadedVideo: null,
             queue: [],
-            quSelectedVideo: null
+            quSelectedVideo: null,
+            msgHistory: []
         }
     }
 
@@ -47,9 +51,10 @@ class VideoRoomPage extends React.Component {
         this.setState({ loadedVideo })
     }
 
-    handleAddToQ = (e) => {
+    handleAddToQ = async (e) => {
         e.preventDefault();
-        const queue = [...this.state.queue, this.state.selectedVideo]
+        const queue = [...this.state.queue, this.state.selectedVideo];
+        roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
         this.setState({ queue })
     }
 
@@ -103,9 +108,9 @@ class VideoRoomPage extends React.Component {
                                 roomId={this.state.roomId}
                             />
                             <ChatBox
-                                className = "video-chatbox"
-                                user = {this.props.user.name}
-                                roomId = {this.state.roomId}
+                                className="video-chatbox"
+                                user={this.props.user.name}
+                                roomId={this.state.roomId}
                             />
                         </div>
                     )}
