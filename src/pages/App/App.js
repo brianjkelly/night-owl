@@ -8,7 +8,9 @@ import VideoRoomPage from '../VideoRoomPage/VideoRoomPage'
 
 import userService from '../../utils/userService'
 import SignupPage from '../SignupPage/SignupPage';
+
 import Lobby from '../Lobby/Lobby';
+import NightOwlLogo from '../../components/NightOwlLogo/NightOwlLogo';
 
 
 class App extends Component {
@@ -63,6 +65,9 @@ class App extends Component {
               user={this.state.user}
             />
           } />
+          <Route exact path='/logo' render={() =>
+            <NightOwlLogo />
+        } />
         </Switch>
       </div>
     );
