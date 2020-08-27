@@ -3,8 +3,8 @@ import VideoSearch from '../../components/VideoSearch/VideoSearch';
 import VideoList from '../../components/VideoList/VideoList';
 import VideoQuList from '../../components/VideoQuList/VideoQuList';
 import VideoDetail from '../../components/VideoDetail/VideoDetail';
-import ChatBox from '../../components/ChatBox/ChatBox';
 import youtubeAPI from '../../utils/youtube-api';
+import ChatBox from '../../components/ChatBox/ChatBox';
 
 class VideoRoomPage extends React.Component {
     constructor() {
@@ -100,10 +100,13 @@ class VideoRoomPage extends React.Component {
                             </div>
                             <VideoDetail
                                 loadedVideo={this.state.loadedVideo}
-                            />
-                            <ChatBox
                                 user={this.props.user.name}
                                 roomId={this.state.roomId}
+                            />
+                            <ChatBox
+                                className = "video-chatbox"
+                                user = {this.props.user.name}
+                                roomId = {this.state.roomId}
                             />
                         </div>
                     )}
