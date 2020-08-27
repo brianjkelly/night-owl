@@ -6,6 +6,7 @@ import VideoDetail from '../../components/VideoDetail/VideoDetail';
 import youtubeAPI from '../../utils/youtube-api';
 import ChatBox from '../../components/ChatBox/ChatBox';
 import roomService from '../../utils/roomService';
+import './VideoRoomPage.css';
 
 class VideoRoomPage extends React.Component {
     constructor() {
@@ -102,16 +103,19 @@ class VideoRoomPage extends React.Component {
                                     />
                                 </div>
                             </div>
-                            <VideoDetail
-                                loadedVideo={this.state.loadedVideo}
-                                user={this.props.user.name}
-                                roomId={this.state.roomId}
-                            />
-                            <ChatBox
-                                className="video-chatbox"
-                                user={this.props.user.name}
-                                roomId={this.state.roomId}
-                            />
+                            <div className="watch-grid">
+                                <VideoDetail
+                                    className="video-all"
+                                    loadedVideo={this.state.loadedVideo}
+                                    user={this.props.user.name}
+                                    roomId={this.state.roomId}
+                                />
+                                <ChatBox
+                                    className="video-chatbox"
+                                    user={this.props.user.name}
+                                    roomId={this.state.roomId}
+                                />
+                            </div>
                         </div>
                     )}
             </div>

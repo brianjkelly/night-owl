@@ -18,7 +18,8 @@
 }
 
 .video-player {
-    /* min-height: 480px; */
+    min-height: 480px;
+    min-width: 853px;
     width: 100%;
     height: 100%;
 }
