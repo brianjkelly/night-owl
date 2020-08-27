@@ -3,6 +3,7 @@
     grid: auto auto / 58px auto max-content;
     align-items: center;
     grid-row-gap: 16px;
+    background: #707070;
 }
 
 .video-info-desc {
@@ -17,7 +18,7 @@
 
 .video-pub-date {
     font-size: 13px;
-    color: #707070;
+    color: black;
 }
 
 .video-description {

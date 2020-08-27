@@ -8,7 +8,10 @@
 
 .watch-grid {
   display: grid;
-  grid-template: auto / auto 340px;
+  /* grid-template: auto / auto 340px; */
+  grid-template-columns: minmax(850px, auto) 340px;
+  grid-template-rows: auto;
+
   padding-top: 24px;
   column-gap: 24px;
   padding-left: 24px;
@@ -23,6 +26,9 @@
 .video-chatbox {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+  background: #6883BA;
+
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 476px) {
