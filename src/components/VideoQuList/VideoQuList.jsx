@@ -1,18 +1,18 @@
 import React from 'react';
-import QuItem from '../QuItem/QuItem';
+import VideoItem from '../VideoItem/VideoItem';
 import RemoveButton from '../RemoveButton/RemoveButton';
-import QuPlayButton from '../QuPlayButton/QuPlayButton';
 import './VideoQuList.css';
 
-const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemoveFromQ, handleQuPlayBtn }) => {
+const VideoQuList = ({ queue, selectedVideo, handleVideoSelect, handleRemoveFromQ }) => {
     const queuedVideos = queue.map((qVideo, idx) => {
         return (
             <div key={'video-' + idx}>
-                <QuItem
+                <VideoItem
                     key={qVideo.id.videoId}
-                    qVideo={qVideo}
-                    handleQuVideoSelect={handleQuVideoSelect}
-                />    
+                    video={qVideo}
+                    handleVideoSelect={handleVideoSelect}
+                    selectedVideo={selectedVideo}
+                />
             </div>
         )
     });
@@ -21,15 +21,8 @@ const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemove
         <div>
             <div className="q-video-grid-header">
                 <span className="q-title">Video Playlist Queue</span>
-                <div className="q-video-play-btn">
-                    <QuPlayButton
-                        quSelectedVideo={quSelectedVideo}
-                        handleQuPlayBtn={handleQuPlayBtn}
-                    />
-                </div>
                 <div className="q-rmv-btn">
                     <RemoveButton
-                        quSelectedVideo={quSelectedVideo}
                         handleRemoveFromQ={handleRemoveFromQ}
                     />
                 </div>
