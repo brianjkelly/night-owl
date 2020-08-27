@@ -63,6 +63,7 @@ class App extends Component {
             <Lobby
               history={history}
               user={this.state.user}
+              handleLogout={this.handleLogout}
             />
           } />
           <Route exact path='/logo' render={() =>
