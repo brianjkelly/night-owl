@@ -5,3 +5,11 @@
     align-items: center;
     margin-bottom: 50px;
   }
+
+  .col-sm-12 {
+    border: 0.5rem outset grey;
+    border-radius: 12px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    outline-offset: 0.5rem;
+  }
