@@ -14,17 +14,6 @@ const VideoList = ({ videos, handleVideoSelect, selectedVideo, handleAddToQ, han
                     handleVideoSelect={handleVideoSelect}
                     selectedVideo={selectedVideo}
                 />
-                <PlayButton
-                    video={video}
-                    selectedVideo={selectedVideo}
-                    handlePlayBtn={handlePlayBtn}
-                    loadedVideo={loadedVideo}
-                />
-                <QuButton
-                    video={video}
-                    selectedVideo={selectedVideo}
-                    handleAddToQ={handleAddToQ}
-                />
             </div>
         )
     });
@@ -33,10 +22,23 @@ const VideoList = ({ videos, handleVideoSelect, selectedVideo, handleAddToQ, han
         <div>
             <div className="video-grid-header">
                 <span className="title">Video Search Results</span>
+                <div className="video-play-btn">
+                    <PlayButton
+                        selectedVideo={selectedVideo}
+                        handlePlayBtn={handlePlayBtn}
+                        loadedVideo={loadedVideo}
+                    />
                 </div>
-                <div className="VideoList">
-                    {renderedVideos}
+                <div className="video-add-btn">
+                    <QuButton
+                        selectedVideo={selectedVideo}
+                        handleAddToQ={handleAddToQ}
+                    />
                 </div>
+            </div>
+            <div className="VideoList">
+                {renderedVideos}
+            </div>
         </div>
     )
 

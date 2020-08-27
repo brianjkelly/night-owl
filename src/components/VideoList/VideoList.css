@@ -4,11 +4,18 @@
 }
 
 .video-grid-header {
+    display: flex;
     padding-bottom: 24px;
     padding-top: 14px;
+    align-items: center;
 }
 
 .title {
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+.video-add-btn, .video-play-btn {
+    margin-left: 5px;
+    margin-right: 5px;
 }
