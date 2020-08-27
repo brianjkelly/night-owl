@@ -2,6 +2,7 @@ import React from 'react';
 import VideoItem from '../VideoItem/VideoItem';
 import QuButton from '../QuButton/QuButton';
 import PlayButton from '../PlayButton/PlayButton';
+import './VideoList.css';
 
 const VideoList = ({ videos, handleVideoSelect, selectedVideo, handleAddToQ, handlePlayBtn, loadedVideo }) => {
     const renderedVideos = videos.map((video) => {
@@ -30,8 +31,12 @@ const VideoList = ({ videos, handleVideoSelect, selectedVideo, handleAddToQ, han
 
     return (
         <div>
-            <h2>Video List</h2>
-            <div className="VideoList">{renderedVideos}</div>
+            <div className="video-grid-header">
+                <span className="title">Video List</span>
+                </div>
+                <div className="VideoList">
+                    {renderedVideos}
+                </div>
         </div>
     )
 

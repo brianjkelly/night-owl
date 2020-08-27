@@ -57,7 +57,7 @@ class VideoRoomPage extends React.Component {
         const response = await youtubeAPI(keywordFromSearch);
         this.setState({
             videos: response.items
-        })
+        });
     }
 
     handleVideoSelect = (video) => {
@@ -76,35 +76,39 @@ class VideoRoomPage extends React.Component {
                     (<div>Initalizing chat</div>)
                     : (
                         <div>
-                            <VideoDetail
-                                loadedVideo={this.state.loadedVideo}
-                            />
                             <VideoSearch
-                                handleFormSubmit={this.handleFormSubmit}
-                            />
-                            <VideoList
-                                handleVideoSelect={this.handleVideoSelect}
-                                videos={this.state.videos}
-                                selectedVideo={this.state.selectedVideo}
-                                handleAddToQ={this.handleAddToQ}
-                                handlePlayBtn={this.handlePlayBtn}
-                                loadedVideo={this.state.loadedVideo}
-                            />
-                            <VideoQuList
-                                queue={this.state.queue}
-                                handleQuVideoSelect={this.handleQuVideoSelect}
-                                quSelectedVideo={this.state.quSelectedVideo}
-                                handleRemoveFromQ={this.handleRemoveFromQ}
-                                handleQuPlayBtn={this.handleQuPlayBtn}
-                            />
-                            <ChatBox
-                                user={this.props.user.name}
-                                roomId={this.state.roomId}
-                            />
+                handleFormSubmit={props.handleFormSubmit}
+            />
+            <div className="video-display">
+                <div className="video-grid-container">
+                    <VideoList
+                        handleVideoSelect={props.handleVideoSelect}
+                        videos={props.videos}
+                        selectedVideo={props.selectedVideo}
+                        handleAddToQ={props.handleAddToQ}
+                        handlePlayBtn={props.handlePlayBtn}
+                        loadedVideo={props.loadedVideo}
+                    />
+                    <VideoQuList 
+                        queue={props.queue}
+                        handleQuVideoSelect={props.handleQuVideoSelect}
+                        quSelectedVideo={props.quSelectedVideo}
+                        handleRemoveFromQ={props.handleRemoveFromQ}
+                        handleQuPlayBtn={props.handleQuPlayBtn}
+                    />
+                </div>
+            </div>
+            <VideoDetail
+                loadedVideo={props.loadedVideo}
+            />
+            <ChatBox
+                user={this.props.user.name}
+                roomId={this.state.roomId} 
+             />
                         </div>
                     )}
             </div>
-        )
+        );
     }
 }
 
