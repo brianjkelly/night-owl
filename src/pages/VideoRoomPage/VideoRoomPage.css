@@ -8,6 +8,10 @@
 .watch-grid {
   display: grid;
   grid-template: auto / auto 340px;
+  padding-top: 24px;
+  column-gap: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .video-all {
