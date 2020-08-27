@@ -3,7 +3,7 @@ const SECRET = process.env.SECRET;
 
 module.exports = function(req, res, next) {
     //Check for tokens being sent in three different ways
-    let token = req.get('Authorization') || req.query.token || req.body.tokenl;
+    let token = req.get('Authorization') || req.query.token || req.body.token;
     if (token) {
         //If in Authorization header, remove Bearer from header string
         token = token.replace('Bearer ', '');
