@@ -1,23 +1,24 @@
-.video-item {
+.q-video-item {
     display: grid;
     grid: 90px auto / 120px;
+    grid-column-gap: 4px;
 
     margin-left: 4px;
     margin-bottom: 24px;
 
     padding: 4px; 
 
-    background-color: #9FB196;
+    background-color: #ADBCA5;
     border-radius: 5px;
 }
 
-.video-image-container {
+.q-video-image-container {
     position: relative;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
 }
 
-.time-label {
+.q-time-label {
     position: absolute;
     background:#111111;
     bottom: 0;
@@ -31,20 +32,20 @@
     line-height: 12px;
 }
 
-.video-info {
+.q-video-info {
     color: #111111;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
 }
 
-.video-preview-container {
+.q-video-preview-container {
     padding-top: 5px;
     font-size: 13px;
     color: #6E6E6E;
 
 }
 
-.channel-title {
+.q-channel-title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

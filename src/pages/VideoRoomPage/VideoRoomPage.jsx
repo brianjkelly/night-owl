@@ -93,17 +93,21 @@ class VideoRoomPage extends React.Component {
                                 </div>
                             </div>
                             <div className="watch-grid">
-                                <VideoDetail
-                                    className="video-all"
-                                    loadedVideo={this.state.loadedVideo}
-                                    user={this.props.user.name}
-                                    roomId={this.state.roomId}
-                                />
-                                <ChatBox
-                                    className="video-chatbox"
-                                    user={this.props.user.name}
-                                    roomId={this.state.roomId}
-                                />
+                                <div className="video-all">
+                                    <VideoDetail
+                                        className="video-all"
+                                        loadedVideo={this.state.loadedVideo}
+                                        user={this.props.user.name}
+                                        roomId={this.state.roomId}
+                                    />
+                                </div>
+                                <div className="video-chatbox">
+                                    <ChatBox
+                                        className="video-chatbox"
+                                        user={this.props.user.name}
+                                        roomId={this.state.roomId}
+                                    />
+                                </div>
                             </div>
                         </div>
                     )}
