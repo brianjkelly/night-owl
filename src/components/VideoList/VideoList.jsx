@@ -32,7 +32,7 @@ const VideoList = ({ videos, handleVideoSelect, selectedVideo, handleAddToQ, han
     return (
         <div>
             <div className="video-grid-header">
-                <span className="title">Video List</span>
+                <span className="title">Video Search Results</span>
                 </div>
                 <div className="VideoList">
                     {renderedVideos}
