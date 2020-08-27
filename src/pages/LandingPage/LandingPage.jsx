@@ -16,9 +16,6 @@ const LandingPage = (props) => {
                     handleLogout={props.handleLogout}
                 />
             </div>
-            <div>
-            <Link className='lobbylink' to='/lobby'>Start</Link>
-            </div>
         </div>
     );
 }

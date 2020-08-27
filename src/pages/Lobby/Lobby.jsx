@@ -19,7 +19,7 @@ class Lobby extends React.Component {
                 user={this.props.user}
                 handleLogout={this.props.handleLogout}
                 />
-                <button className="create-button" onClick={this.handleRoomCreate}>Create room</button>
+                <button className="create-button" onClick={this.handleRoomCreate}>Create Room</button>
             </div>
         );
     }
