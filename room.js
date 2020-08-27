@@ -8,12 +8,22 @@ class VideoRoom {
     roomId;
     leader;
     userList;
-    videoQueue;
+    videos;
+    selectedVideo;
+    loadedVideo;
+    queue;
+    quSelectedVideo;
     msgHistory;
     constructor(name) {
         this.roomId = this.generateId();
         this.leader = name;
-
+        this.userList = [];
+        this.videos = [];
+        this.selectedVideo = null;
+        this.loadedVideo = null;
+        this.queue = [];
+        this.quSelectedVideo = null;
+        this.msgHistory = [];
     }
 
     generateId() {
