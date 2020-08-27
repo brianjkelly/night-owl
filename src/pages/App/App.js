@@ -8,6 +8,7 @@ import VideoRoomPage from '../VideoRoomPage/VideoRoomPage'
 import youtubeAPI from '../../utils/youtube-api';
 import userService from '../../utils/userService'
 import SignupPage from '../SignupPage/SignupPage';
+import NightOwlLogo from '../../components/NightOwlLogo/NightOwlLogo';
 
 
 class App extends Component {
@@ -117,6 +118,9 @@ class App extends Component {
               handleQuPlayBtn={this.handleQuPlayBtn}
             />
           } />
+          <Route exact path='/logo' render={() =>
+            <NightOwlLogo />
+        } />
         </Switch>
       </div>
     );
