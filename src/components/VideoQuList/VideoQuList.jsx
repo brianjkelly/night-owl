@@ -34,7 +34,9 @@ const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemove
                     />
                 </div>
             </div>
-            <div className="QueueList">{queuedVideos}</div>
+            <div className="QueueList">
+                {queuedVideos}
+            </div>
         </div>
     )
 }
