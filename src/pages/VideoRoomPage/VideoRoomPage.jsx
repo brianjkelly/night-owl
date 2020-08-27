@@ -32,14 +32,20 @@ class VideoRoomPage extends React.Component {
 
     handleRemoveFromQ = (e) => {
         e.preventDefault();
-        const queue = [...this.state.queue];
-        for (var i = queue.length - 1; i >= 0; --i) {
+        let payload = {};
+        console.log(e.target[0]);
+        payload.idx = e.target[0].value;
+        payload.video = this.state.quSelectedVideo;
+        console.log(payload);
+        roomService.deleteQueueVideo(this.state.roomId, payload);
+        /*for (let i = 0; i < queue.length; i++) {
             if (queue[i] === this.state.quSelectedVideo) {
                 queue.splice(i, 1);
+                roomService.deleteQueueVideo(this.state.roomId, queue[i]);
             }
-        }
-        this.setState({ queue })
-        this.setState({ quSelectedVideo: null })
+        }*/
+        //this.setState({ queue })
+        this.setState({ quSelectedVideo: null });
     }
 
     handleQuVideoSelect = (qVideo) => {
@@ -54,9 +60,9 @@ class VideoRoomPage extends React.Component {
 
     handleAddToQ = async (e) => {
         e.preventDefault();
-        const queue = [...this.state.queue, this.state.selectedVideo];
-        roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
-        this.setState({ queue })
+        const response = await roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
+        const queue = [...response.queue];
+        this.setState({ queue });
     }
 
     handleFormSubmit = async (keywordFromSearch) => {

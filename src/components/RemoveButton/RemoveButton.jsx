@@ -1,11 +1,11 @@
 import React from 'react';
 
-const RemoveButton = ({ qVideo, quSelectedVideo, handleRemoveFromQ }) => {
+const RemoveButton = ({ idx, qVideo, quSelectedVideo, handleRemoveFromQ }) => {
     if (qVideo === quSelectedVideo) {
         return (
             <div className="RemoveButton">
                 <form className="RemoveButton-form" onSubmit={handleRemoveFromQ}>
-                    <button type="submit">Remove from Queue</button>
+                    <button type="submit" value={idx}>Remove from Queue</button>
                 </form>
             </div>
         );

@@ -20,7 +20,19 @@ function queueVideo(id, video) {
     });
 }
 
+function deleteQueueVideo(id, data) {
+    return fetch(`/api/rooms/${id}/delete`, {
+        method: 'DELETE',
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify(data)
+    }).then(res => {
+        if (res.ok) return res.json();
+        throw new Error('Could not delete from queue');
+    });
+}
+
 export default {
     createRoom,
-    queueVideo
+    queueVideo,
+    deleteQueueVideo
 };
