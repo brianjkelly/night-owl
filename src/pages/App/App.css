@@ -3,13 +3,12 @@
 body {
   display: flex;
   justify-content: center;
-  margin-top: 300px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(7, 177, 131, 0.659);
+  background-color: rgba(52, 53, 70, 0.913);
 }
 
 .App-header {
@@ -22,3 +21,5 @@ body {
   font-size: calc(10px + 2vmin);
   color: grey;
 }
+
+
