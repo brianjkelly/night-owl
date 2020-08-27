@@ -9,7 +9,7 @@ import './LandingPage.css';
 const LandingPage = (props) => {
     return (
         <div className="LandingPage">
-            <NightOwlLogo />
+            <div><NightOwlLogo /></div>
             <NavBar
                 user={props.user}
                 handleLogout={props.handleLogout}

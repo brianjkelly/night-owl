@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SignupForm from '../../components/SignupForm/SignupForm';
+import NightOwlLogo from '../../components/NightOwlLogo/NightOwlLogo';
 import './SignupPage.css';
 
 class SignupPage extends Component {
@@ -15,6 +16,7 @@ class SignupPage extends Component {
   render() {
     return (
       <div className='SignupPage'>
+        <NightOwlLogo />
         <SignupForm {...this.props} updateMessage={this.updateMessage} />
         <p>{this.state.message}</p>
       </div>
