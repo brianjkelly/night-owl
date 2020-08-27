@@ -4,8 +4,6 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cors = require('cors')
 
-// place routers here
-const videoRouter = require('./routes/api/videos');
 
 // set up express
 const app = express();
@@ -25,8 +23,9 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // place API routes here
-app.use('/api/videos', videoRouter);
+app.use('/api/videos', require('./routes/api/videos'));
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/rooms', require('./routes/api/rooms'));
 
 // place "catch all" route here
 app.get('/*', function (req, res) {
