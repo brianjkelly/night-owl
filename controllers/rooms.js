@@ -3,6 +3,7 @@ const VideoRoom = require('../room').VideoRoom;
 module.exports = {
     create,
     queueVideo,
+    deleteFromQueue,
 }
 
 const videoRooms = [];
@@ -26,4 +27,8 @@ function queueVideo(req, res) {
     } catch (err) {
         res.status(400).json('Something went wrong.');
     }
+}
+
+function deleteFromQueue(req, res) {
+
 }

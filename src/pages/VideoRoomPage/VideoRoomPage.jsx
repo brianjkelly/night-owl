@@ -34,6 +34,7 @@ class VideoRoomPage extends React.Component {
         const queue = [...this.state.queue];
         for (var i = queue.length - 1; i >= 0; --i) {
             if (queue[i] === this.state.quSelectedVideo) {
+                roomService.removeQueueVideo(this.state.roomId, queue[i]);
                 queue.splice(i, 1);
             }
         }
