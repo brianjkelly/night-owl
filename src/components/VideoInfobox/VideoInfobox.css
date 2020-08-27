@@ -1,0 +1,27 @@
+.video-infobox {
+    display: grid;
+    grid: auto auto / 58px auto max-content;
+    align-items: center;
+    grid-row-gap: 16px;
+}
+
+.video-info-desc {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+.channel-name {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.video-pub-date {
+    font-size: 13px;
+    color: #707070;
+}
+
+.video-description {
+    max-width: 615px;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
