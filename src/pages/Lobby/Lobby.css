@@ -16,3 +16,27 @@
     padding: 0.1rem;
     outline-offset: 0.1rem;
   }
+
+  .room-button {
+    border: 0.4rem outset grey;
+    border-radius: 12px;
+    margin: 0.1rem;
+    padding: 0.1rem;
+    outline-offset: 0.1rem;
+  }
+
+  .title {
+      color: whitesmoke;
+  }
+
+
+  .room-id-form {
+    border-radius: 5px;
+    margin: 0.1rem;
+    padding: 0.1rem;
+    /* border: 0.4rem outset grey;
+    border-radius: 12px;
+    margin: 0.1rem;
+    padding: 0.1rem;
+    outline-offset: 0.1rem; */
+  } 
