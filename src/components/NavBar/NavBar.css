@@ -1,7 +1,11 @@
 .NavBar {
   display: flex;
+  margin-top: 300px;
   justify-content: center;
   margin: 0 0 20px;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 .NavBar-link {
