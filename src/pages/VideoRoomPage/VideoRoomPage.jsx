@@ -30,21 +30,16 @@ class VideoRoomPage extends React.Component {
         this.setState({ loadedVideo })
     }
 
-    handleRemoveFromQ = (e) => {
+    handleRemoveFromQ = async (e) => {
         e.preventDefault();
         let payload = {};
-        console.log(e.target[0]);
         payload.idx = e.target[0].value;
         payload.video = this.state.quSelectedVideo;
-        console.log(payload);
-        roomService.deleteQueueVideo(this.state.roomId, payload);
-        /*for (let i = 0; i < queue.length; i++) {
-            if (queue[i] === this.state.quSelectedVideo) {
-                queue.splice(i, 1);
-                roomService.deleteQueueVideo(this.state.roomId, queue[i]);
-            }
-        }*/
-        //this.setState({ queue })
+
+        const response = await roomService.deleteQueueVideo(this.state.roomId, payload);
+        const queue = [...response.queue];
+
+        this.setState({ queue })
         this.setState({ quSelectedVideo: null });
     }
 
