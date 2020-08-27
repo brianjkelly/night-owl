@@ -9,8 +9,8 @@ let socket;
 const ChatRoom = (props) => {
     const [msg, setMsg] = useState('');
     const [msgHistory, setHistory] = useState([]);
-    const tempData = [Math.floor(Math.random() * 100), Math.floor(Math.random() * 2)];
-
+    const tempData = [props.user, props.roomId];
+    console.log(props);
     useEffect(() => {
         const [user, room] = tempData;
         socket = io('localhost:3001');
@@ -20,8 +20,8 @@ const ChatRoom = (props) => {
         socket.on('chat message', msg => {
             setHistory(msgHistory => [...msgHistory, msg]);
         });
-        
-    }, []);
+
+    }, [props.roomId]);
 
     const sendMessage = (e) => {
         e.preventDefault();

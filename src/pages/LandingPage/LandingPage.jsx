@@ -11,9 +11,6 @@ const LandingPage = (props) => {
                 user={props.user}
                 handleLogout={props.handleLogout}
             />
-
-
-
         </div>
     );
 }

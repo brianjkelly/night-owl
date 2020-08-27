@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
-const VideoDetail = ({ loadedVideo }) => { 
+const VideoDetail = ({ loadedVideo }) => {
 
     if (!loadedVideo) {
         return <div>No Video Loaded</div>;
@@ -9,8 +9,8 @@ const VideoDetail = ({ loadedVideo }) => {
 
     return (
         <div>
-            <VideoPlayer 
-                loadedVideo = {loadedVideo}
+            <VideoPlayer
+                loadedVideo={loadedVideo}
             />
             <div className="video-segment">
                 <div className="video-player-header">{loadedVideo.snippet.title}</div>
