@@ -1,11 +1,6 @@
 
 
 
-.LandingPage-link-margin {
-    margin-bottom: 100px;
-  }
-  
-
   .LandingPage {
     display: flex;
     margin-top: 300px;
@@ -21,6 +16,10 @@
     width: fit-content;
 }
 
+  .lobbylink {
+    color: whitesmoke;
+  }
+
   .LandingPage-controls {
     display: flex;
     justify-content: space-between;
@@ -28,9 +27,4 @@
     padding: 10px;
   }
   
-
-  /* display: flex;
-    margin-top: 300px;
-    
-    justify-content: center;
-    margin-bottom: 50px; */
+  
