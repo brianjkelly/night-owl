@@ -19,15 +19,8 @@ class VideoRoomPage extends React.Component {
             selectedVideo: null,
             loadedVideo: null,
             queue: [],
-            quSelectedVideo: null,
             msgHistory: []
         }
-    }
-
-    handleQuPlayBtn = (e) => {
-        e.preventDefault();
-        const loadedVideo = this.state.quSelectedVideo
-        this.setState({ loadedVideo })
     }
 
     handleRemoveFromQ = async (e) => {
@@ -41,10 +34,6 @@ class VideoRoomPage extends React.Component {
 
         this.setState({ queue })
         this.setState({ quSelectedVideo: null });
-    }
-
-    handleQuVideoSelect = (qVideo) => {
-        this.setState({ quSelectedVideo: qVideo });
     }
 
     handlePlayBtn = (e) => {
@@ -97,10 +86,9 @@ class VideoRoomPage extends React.Component {
                                     />
                                     <VideoQuList
                                         queue={this.state.queue}
-                                        handleQuVideoSelect={this.handleQuVideoSelect}
-                                        quSelectedVideo={this.state.quSelectedVideo}
+                                        handleVideoSelect={this.handleVideoSelect}
+                                        selectedVideo={this.state.selectedVideo}
                                         handleRemoveFromQ={this.handleRemoveFromQ}
-                                        handleQuPlayBtn={this.handleQuPlayBtn}
                                     />
                                 </div>
                             </div>
