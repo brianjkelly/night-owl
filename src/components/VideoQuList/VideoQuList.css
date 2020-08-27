@@ -4,11 +4,18 @@
 }
 
 .q-video-grid-header {
+    display: flex;
     padding-bottom: 24px;
     padding-top: 14px;
+    align-items: center;
 }
 
 .q-title {
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+.q-rmv-btn, .q-video-play-btn {
+    margin-left: 5px;
+    margin-right: 5px;
 }

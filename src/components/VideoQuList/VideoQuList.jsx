@@ -12,18 +12,7 @@ const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemove
                     key={qVideo.id.videoId}
                     qVideo={qVideo}
                     handleQuVideoSelect={handleQuVideoSelect}
-                />
-                <RemoveButton
-                    idx={idx}
-                    qVideo={qVideo}
-                    quSelectedVideo={quSelectedVideo}
-                    handleRemoveFromQ={handleRemoveFromQ}
-                />
-                <QuPlayButton
-                    qVideo={qVideo}
-                    quSelectedVideo={quSelectedVideo}
-                    handleQuPlayBtn={handleQuPlayBtn}
-                />
+                />    
             </div>
         )
     });
@@ -32,6 +21,18 @@ const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemove
         <div>
             <div className="q-video-grid-header">
                 <span className="q-title">Video Playlist Queue</span>
+                <div className="q-video-play-btn">
+                    <QuPlayButton
+                        quSelectedVideo={quSelectedVideo}
+                        handleQuPlayBtn={handleQuPlayBtn}
+                    />
+                </div>
+                <div className="q-rmv-btn">
+                    <RemoveButton
+                        quSelectedVideo={quSelectedVideo}
+                        handleRemoveFromQ={handleRemoveFromQ}
+                    />
+                </div>
             </div>
             <div className="QueueList">{queuedVideos}</div>
         </div>
