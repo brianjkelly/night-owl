@@ -10,14 +10,19 @@ const VideoDetail = ({ loadedVideo }) => {
 
     return (
         <div>
-            <VideoPlayer 
+            <VideoPlayer
+                className = "video-player" 
                 loadedVideo = {loadedVideo}
             />
+            <div className="video-metadata" style={{width: '100%', height: '100px', background: '#F91112'}}>Metadata</div>
             <VideoInfobox 
+                className = "video-infobox"
                 loadedVideo = {loadedVideo}
+                style={{width: '100%', height: '100px', background: '#BD10E0'}}
             />
+            <div className="video-chatbox">Video Chatbox</div>
         </div>
-    )
+    );
 }
 
 export default VideoDetail;
