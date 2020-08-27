@@ -23,7 +23,7 @@ class LoginPage extends Component {
             await userService.login(this.state);
         // history promrammaticly routing, history passed through props to component via Route component
             this.props.handleSignupOrLogin();
-            this.props.history.push('/');  
+            this.props.history.push('/lobby');  
         } catch (err) {
             // Invalid user data (probably duplicate email)
             alert('Invalid Credentials!!!');
