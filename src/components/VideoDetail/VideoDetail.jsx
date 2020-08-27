@@ -14,15 +14,17 @@ const VideoDetail = ({ loadedVideo }) => {
                         className = "video-player" 
                         loadedVideo = {loadedVideo}
                     />
-                    <VideoMetadata 
-                        className="video-metadata" 
-                        loadedVideo = {loadedVideo}
+                    <div className="v-info">
+                        <VideoMetadata 
+                            className="video-metadata" 
+                            loadedVideo = {loadedVideo}
+                            />
+                        <VideoInfobox 
+                            className = "video-infobox"
+                            loadedVideo = {loadedVideo}
+                            style={{width: '100%', height: '100px', background: '#BD10E0'}}
                         />
-                    <VideoInfobox 
-                        className = "video-infobox"
-                        loadedVideo = {loadedVideo}
-                        style={{width: '100%', height: '100px', background: '#BD10E0'}}
-                    />
+                    </div>
                 </div>
           )}
         </div>
