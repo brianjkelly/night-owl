@@ -29,15 +29,19 @@ const ChatRoom = (props) => {
     }
 
     return (
-        <div>
-            <MessageBox
-                msgHistory={msgHistory}
-            />
-            <TextBox
-                msg={msg}
-                setMsg={setMsg}
-                sendMessage={sendMessage}
-            />
+        <div className = "chat-box">
+            <div className = "message-box">
+                <MessageBox
+                    msgHistory={msgHistory}
+                />
+            </div>
+            <div className = "text-box">
+                <TextBox
+                    msg={msg}
+                    setMsg={setMsg}
+                    sendMessage={sendMessage}
+                />
+            </div>
         </div >
     );
 };

@@ -2,7 +2,27 @@
     /* set margin-top: to whatever the top nav-heigh ends up being */
     display: grid;
     grid: auto/auto;
-    justify-content:center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.watch-grid {
+  display: grid;
+  grid-template: auto / auto 340px;
+  padding-top: 24px;
+  column-gap: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.video-all {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.video-chatbox {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 @media screen and (min-width: 476px) {
@@ -17,32 +37,32 @@
     }
   }
   
-  @media screen and (min-width: 900px) {
-    .video-grid-container {
-      max-width: 667px;
-    }
+@media screen and (min-width: 900px) {
+  .video-grid-container {
+    max-width: 667px;
   }
-  
-  @media screen and (min-width: 1096px) {
-    .video-grid-container {
-      max-width: 864px;
-    }
+}
+
+@media screen and (min-width: 1096px) {
+  .video-grid-container {
+    max-width: 864px;
   }
-  
-  @media screen and (min-width: 1370px) {
-    .video-grid-container {
-      max-width: 1096px;
-    }
+}
+
+@media screen and (min-width: 1370px) {
+  .video-grid-container {
+    max-width: 1096px;
   }
-  
-  @media screen and (min-width: 1370px) {
-    .video-grid-container {
-      max-width: 1096px;
-    }
+}
+
+@media screen and (min-width: 1370px) {
+  .video-grid-container {
+    max-width: 1096px;
   }
-  
-  @media screen and (min-width: 1560px) {
-    .video-grid-container {
-      max-width: 1284px;
-    }
+}
+
+@media screen and (min-width: 1560px) {
+  .video-grid-container {
+    max-width: 1284px;
   }
+}

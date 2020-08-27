@@ -1,7 +1,4 @@
- 
-body {
-  margin-top: 300px;
-}
+
 
 
 .LandingPage-link-margin {
@@ -11,8 +8,11 @@ body {
 
   .LandingPage {
     display: flex;
+    margin-top: 300px;
     justify-content: center;
     flex-direction: column;
+    flex-flow: column nowrap;
+    align-items: center;
     }
 
  
@@ -28,3 +28,9 @@ body {
     padding: 10px;
   }
   
+
+  /* display: flex;
+    margin-top: 300px;
+    
+    justify-content: center;
+    margin-bottom: 50px; */

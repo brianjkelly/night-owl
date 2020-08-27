@@ -31,7 +31,7 @@ const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemove
     return (
         <div>
             <div className="q-video-grid-header">
-                <span className="q-title">Queue List</span>
+                <span className="q-title">Video Playlist Queue</span>
             </div>
             <div className="QueueList">{queuedVideos}</div>
         </div>
