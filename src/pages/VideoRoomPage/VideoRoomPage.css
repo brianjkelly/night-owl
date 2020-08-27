@@ -2,7 +2,8 @@
     /* set margin-top: to whatever the top nav-heigh ends up being */
     display: grid;
     grid: auto/auto;
-    justify-content:center;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .watch-grid {

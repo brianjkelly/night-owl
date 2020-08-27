@@ -1,0 +1,14 @@
+.video-search {
+    display: flex;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    align-items: center;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 14px;
+}

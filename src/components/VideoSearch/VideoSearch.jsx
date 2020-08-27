@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './VideoSearch.css';
 
 class VideoSearch extends Component {
     state = {
@@ -23,11 +24,9 @@ class VideoSearch extends Component {
 
     render() {
         return(
-            <div className="VideoSearch">
-                <div className="VideoSearch-header">
-                    <h2>Video Search</h2>
-                </div>
-                <form className="VideoSearch-form" onSubmit={this.handleSubmit}>
+            <div className="video-search">
+                <span className="title">Search Videos:</span>
+                <form className="video-search-form" onSubmit={this.handleSubmit}>
                     <input 
                     type="text" 
                     name="video-search" 
