@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class VideoSearch extends Component {
     state = {
-        keyword: 'Enter Keyword'
+        keyword: 'Enter Search Keyword'
     }
     // create function for handling changes
     handleChange = (e) => {
@@ -11,9 +11,14 @@ class VideoSearch extends Component {
         });
     }
     // create function for submitting keyword
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault();
         this.props.handleFormSubmit(this.state.keyword);
+    }
+
+    handleInputClick = (e) => {
+        e.preventDefault();
+        this.setState({ keyword: '' })
     }
 
     render() {
@@ -28,6 +33,7 @@ class VideoSearch extends Component {
                     name="video-search" 
                     value={this.state.keyword} 
                     onChange={this.handleChange} 
+                    onClick={this.handleInputClick}
                     />
                     <button type="submit">Search</button>
                 </form>

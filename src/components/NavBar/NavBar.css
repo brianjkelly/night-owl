@@ -1,13 +1,16 @@
 .NavBar {
-    display: flex;
-    justify-content: center;
-    margin: 0 0 20px;
-  }
-  
-  .NavBar-link {
-    margin: 0 10px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+
+.NavBar-link {
+  margin: 0 10px;
+}
+
+
   .NavBar-welcome {
-    color: grey;
+    color: rgb(255, 255, 255);
   }
+
+  

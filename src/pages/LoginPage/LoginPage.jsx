@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 import userService from '../../utils/userService';
+import NightOwlLogo from '../../components/NightOwlLogo/NightOwlLogo';
 
 class LoginPage extends Component {
 
@@ -33,6 +34,7 @@ class LoginPage extends Component {
     render() {
         return (
           <div className="LoginPage">
+            <NightOwlLogo />
             <header className="header-footer">Log In</header>
             <form className="form-horizontal" onSubmit={this.handleSubmit} >
               <div className="form-group">
@@ -52,6 +54,7 @@ class LoginPage extends Component {
                 </div>
               </div>
             </form>
+            
           </div>
         );
       }

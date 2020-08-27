@@ -8,6 +8,7 @@ import VideoRoomPage from '../VideoRoomPage/VideoRoomPage'
 import youtubeAPI from '../../utils/youtube-api';
 import userService from '../../utils/userService'
 import SignupPage from '../SignupPage/SignupPage';
+import NightOwlLogo from '../../components/NightOwlLogo/NightOwlLogo';
 
 
 class App extends Component {
@@ -16,10 +17,46 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      loadedVideo: null,
+      queue: [],
+      quSelectedVideo: null
     }
   }
 
+  handleQuPlayBtn = (e) => {
+    e.preventDefault();
+    const loadedVideo = this.state.quSelectedVideo
+    this.setState({ loadedVideo })
+  }
+
+  handleRemoveFromQ = (e) => {
+    e.preventDefault();
+    const queue = [...this.state.queue];
+    for (var i = queue.length - 1; i >= 0; --i) {
+      if (queue[i] === this.state.quSelectedVideo) {
+        queue.splice(i,1);
+      }
+    }
+    this.setState({ queue })
+    this.setState({ quSelectedVideo: null })
+  }
+
+  handleQuVideoSelect = (qVideo) => {
+    this.setState({ quSelectedVideo: qVideo });
+  }
+
+  handlePlayBtn = (e) => {
+    e.preventDefault();
+    const loadedVideo = this.state.selectedVideo
+    this.setState({ loadedVideo })
+  }
+
+  handleAddToQ = (e) => {
+    e.preventDefault();
+    const queue = [...this.state.queue, this.state.selectedVideo]
+    this.setState({ queue })
+  }
 
   handleSubmit = async (keywordFromSearch) => {
     const response = await youtubeAPI(keywordFromSearch);
@@ -70,9 +107,20 @@ class App extends Component {
               handleFormSubmit={this.handleSubmit}
               handleVideoSelect={this.handleVideoSelect}
               videos={this.state.videos}
-              video={this.state.selectedVideo}
+              selectedVideo={this.state.selectedVideo}
+              handleAddToQ={this.handleAddToQ}
+              handlePlayBtn={this.handlePlayBtn}
+              loadedVideo={this.state.loadedVideo}
+              handleQuVideoSelect={this.handleQuVideoSelect}
+              queue={this.state.queue}
+              quSelectedVideo={this.state.quSelectedVideo}
+              handleRemoveFromQ={this.handleRemoveFromQ}
+              handleQuPlayBtn={this.handleQuPlayBtn}
             />
           } />
+          <Route exact path='/logo' render={() =>
+            <NightOwlLogo />
+        } />
         </Switch>
       </div>
     );
