@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
+import VideoInfobox from '../VideoInfobox/VideoInfobox';
 
 const VideoDetail = ({ loadedVideo }) => { 
 
@@ -12,10 +13,9 @@ const VideoDetail = ({ loadedVideo }) => {
             <VideoPlayer 
                 loadedVideo = {loadedVideo}
             />
-            <div className="video-segment">
-                <div className="video-player-header">{loadedVideo.snippet.title}</div>
-                <div>{loadedVideo.snippet.description}</div>
-            </div>
+            <VideoInfobox 
+                loadedVideo = {loadedVideo}
+            />
         </div>
     )
 }
