@@ -1,9 +1,10 @@
 .q-video-item {
     display: grid;
-    grid: auto / 120px auto;
+    grid: 90px auto / 120px;
     grid-column-gap: 4px;
 
-    margin-bottom: 4px;
+    margin-left: 4px;
+    margin-bottom: 24px;
 }
 
 .q-video-image-container {
@@ -28,8 +29,8 @@
 
 .q-video-info {
     color: #111111;
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
 }
 
 .q-video-preview-container {

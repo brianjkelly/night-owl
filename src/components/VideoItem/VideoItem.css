@@ -26,13 +26,10 @@
     line-height: 12px;
 }
 
-.video-content {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-}
-
 .video-info {
     color: #111111;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
 }
 
 .video-preview-container {
