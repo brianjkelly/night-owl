@@ -9,10 +9,10 @@ let socket;
 const ChatRoom = (props) => {
     const [msg, setMsg] = useState('');
     const [msgHistory, setHistory] = useState([]);
-    const tempData = [props.user, props.roomId];
-    console.log(props);
+
     useEffect(() => {
-        const [user, room] = tempData;
+        const user = props.user;
+        const room = props.room;
         socket = io('localhost:3001');
         socket.emit('join', { user, room }, error => {
             console.log(error);
