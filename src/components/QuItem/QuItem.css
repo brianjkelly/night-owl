@@ -1,6 +1,6 @@
 .q-video-item {
     display: grid;
-    grid: auto / 120px 200px;
+    grid: auto / 120px auto;
     grid-column-gap: 4px;
 
     margin-bottom: 4px;

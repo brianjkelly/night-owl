@@ -28,8 +28,8 @@ const VideoQuList = ({ queue, handleQuVideoSelect, quSelectedVideo, handleRemove
     });
 
     return (
-        <div>
-            <div className="q-list-container">
+        <div className="q-list-container">
+            <div className="q-list-header">
                 <h2>Queue List</h2>
             </div>
             <div className="QueueList">{queuedVideos}</div>

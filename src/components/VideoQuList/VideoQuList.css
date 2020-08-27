@@ -1,4 +1,8 @@
 .q-list-container {
+    max-width: 402px;
+}
+
+.q-list-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
