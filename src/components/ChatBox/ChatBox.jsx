@@ -12,7 +12,7 @@ const ChatRoom = (props) => {
 
     useEffect(() => {
         const user = props.user;
-        const room = props.room;
+        const room = props.roomId;
         socket = io('localhost:3001');
         socket.emit('join', { user, room }, error => {
             console.log(error);

@@ -69,11 +69,10 @@ class VideoRoomPage extends React.Component {
     }
 
     render() {
-        const { isFetching } = this.state;
         return (
             <div className="VideoRoomPage">
-                {isFetching ?
-                    (<div>Initalizing chat</div>)
+                {!this.state.roomId ?
+                    (<div>Initalizing page</div>)
                     : (
                         <div>
                             <VideoSearch
