@@ -23,7 +23,7 @@ const ChatRoom = (props) => {
 
     const sendMessage = (e) => {
         e.preventDefault();
-        props.socket.emit('chat message', e.target[0].value, () => setMsg(''));
+        props.socket.emit('chat message', { user, msg: e.target[0].value }, () => setMsg(''));
     }
 
     return (
