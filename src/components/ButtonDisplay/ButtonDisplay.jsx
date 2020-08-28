@@ -2,6 +2,7 @@ import React from 'react';
 import PlayButton from '../PlayButton/PlayButton';
 import QuButton from '../QuButton/QuButton';
 import RemoveButton from '../RemoveButton/RemoveButton';
+import './ButtonDisplay.css'
 
 const ButtonDisplay = (props) => {
 

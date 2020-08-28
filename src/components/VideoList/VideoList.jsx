@@ -22,19 +22,6 @@ const VideoList = ({ videos, handleVideoSelect, selectedVideo, handleAddToQ, han
         <div>
             <div className="video-grid-header">
                 <span className="title">Video Search Results</span>
-                <div className="video-play-btn">
-                    <PlayButton
-                        selectedVideo={selectedVideo}
-                        handlePlayBtn={handlePlayBtn}
-                        loadedVideo={loadedVideo}
-                    />
-                </div>
-                <div className="video-add-btn">
-                    <QuButton
-                        selectedVideo={selectedVideo}
-                        handleAddToQ={handleAddToQ}
-                    />
-                </div>
             </div>
             <div className="VideoList">
                 {renderedVideos}

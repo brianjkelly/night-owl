@@ -4,7 +4,7 @@ const QuButton = ({ handleAddToQ }) => {
         return (
             <div className="QuButton">
                 <form className="QuButton-form" onSubmit={handleAddToQ}>
-                    <button type="submit">Add to Queue</button>
+                    <button className="vid-ctrl-btn" type="submit">✚</button>
                 </form>
             </div>
         );  

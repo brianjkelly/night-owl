@@ -4,7 +4,7 @@ const RemoveButton = ({ handleRemoveFromQ }) => {
     return (
         <div className="RemoveButton">
             <form className="RemoveButton-form" onSubmit={handleRemoveFromQ}>
-                <button type="submit">Remove from Queue</button>
+                <button className="vid-ctrl-btn" type="submit">➖</button>
             </form>
         </div>
     );

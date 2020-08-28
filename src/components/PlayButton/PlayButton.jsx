@@ -4,7 +4,7 @@ const PlayButton = ({ handlePlayBtn }) => {
     return (
         <div className="PlayButton">
             <form className="PlayButton-form" onSubmit={handlePlayBtn}>
-                <button type="submit">Play Video</button>
+                <button className="vid-ctrl-btn" type="submit">▶️</button>
             </form>
         </div>
     );

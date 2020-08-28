@@ -1,8 +1,19 @@
 .video-display {
     display: grid;
-    grid: auto/auto;
+    /* grid: auto/auto; */
+
+    grid-template-columns: auto 340px;
+    grid-template-rows: auto;
+
     padding-left: 24px;
     padding-right: 24px;
+}
+
+.btn-display {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .watch-grid {

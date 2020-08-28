@@ -21,11 +21,6 @@ const VideoQuList = ({ queue, selectedVideo, handleVideoSelect, handleRemoveFrom
         <div>
             <div className="q-video-grid-header">
                 <span className="q-title">Video Playlist Queue</span>
-                <div className="q-rmv-btn">
-                    <RemoveButton
-                        handleRemoveFromQ={handleRemoveFromQ}
-                    />
-                </div>
             </div>
             <div className="QueueList">
                 {queuedVideos}
