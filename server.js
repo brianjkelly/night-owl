@@ -7,7 +7,7 @@ const cors = require('cors')
 
 // set up express
 const app = express();
-const port = 3001
+const port = process.env.PORT || '3001';
 
 // user list set up
 
@@ -58,7 +58,7 @@ io.sockets.on('connection', socket => {
 
 
 
-    socket.on('join', ({ user, room }, error) => {
+    socket.on('join', ({ user, room }) => {
         socket.join(room);
         io.to(room).emit('chat message', `${user} has joined ${room}`);
 
@@ -81,7 +81,6 @@ io.sockets.on('connection', socket => {
 
         });
 
-        error();
     });
     socket.on('disconnect', () => {
         console.log('user disconnected')
