@@ -1,69 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## `Welcome to Night Owl`
 
-In the project directory, you can run:
+Night Owl is the brainchild of three General Assembly Students Aaron Rascon, Brian Kelly, and Austin Ferrin. In the time of Covid we wanted to be able to bring people together on a purly social platform away from work video calls and madding family group chats you never wanted to be a part of. Night Owl is an App that allows you and your friends to be able to watch anything on Youtube and chat with eachother in real time. It has a retro feel in nature and is here for you endless viewing needs. 
 
-### `npm start`
+[Imgur](https://i.imgur.com/ZmZOQ1u.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Imgur](https://i.imgur.com/7zKXAso.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Imgur](https://i.imgur.com/XYKTtrk.png)
 
-### `npm test`
+[Imgur](https://i.imgur.com/GVBFIrD.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Technologies Used`
 
-### `npm run build`
+Mongoose
+Mongo DB
+Express
+React
+Nodejs
+Socket io
+HTML
+CSS
+Axios
+bcrypt
+JSONwebToken
+Trello 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### `Planning`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Night Owl started their planning using <a href="https://trello.com/b/tb68wuwn/youtube-react">Trello</a> to get the main goals down. Also involved in the planning stage were some rough wire frames from Lucid Chats to find placement of components and flow.
 
-### `npm run eject`
+### `Unsolved Problems`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+We were not able to display a list of all the people involved in the chat in real time, however we were able to declare in the chat when someone new entered and who was sending what messages using their usernames. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `Future Enhancements`
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# videorange
