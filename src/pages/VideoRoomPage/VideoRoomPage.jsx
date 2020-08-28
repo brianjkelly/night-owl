@@ -83,10 +83,8 @@ class VideoRoomPage extends React.Component {
     }
 
     async componentDidMount() {
-        const socket = io('localhost:3001');
-        socket.emit('join', { user: this.props.user.name, room: this.props.match.params.id }, error => {
-            console.log(error);
-        });
+        const socket = io();
+        socket.emit('join', { user: this.props.user.name, room: this.props.match.params.id });
 
         socket.on('unify-queue', queue => {
             this.setState({ queue });

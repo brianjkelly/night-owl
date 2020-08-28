@@ -12,19 +12,22 @@ const ChatRoom = (props) => {
 
     useEffect(() => {
         const user = props.user;
-        props.socket.on('chat message', msg => {
+
+        props.socket.on('chat message', ({ user, msg }) => {
             setHistory(msgHistory => [...msgHistory, user + ": " + msg]);
         });
+
         props.socket.on('update-user-list', users => {
             setUserList(users);
         });
+
         props.socket.emit('register-user', user);
 
     }, [props.roomId]);
 
     const sendMessage = (e) => {
         e.preventDefault();
-        props.socket.emit('chat message', e.target[0].value, () => setMsg(''));
+        props.socket.emit('chat message', { user, msg: e.target[0].value }, () => setMsg(''));
     }
 
     return (
