@@ -1,9 +1,44 @@
-.vid-ctrl-btn {
+.vid-ctrl-btn-add {
     height: 120px;
     width: 120px;
     margin-top: 20px;
     margin-bottom: 20px;
 
+    text-align: center;
+    line-height: 60px; 
+
+    font-size: 8rem;
+    border-radius: 50px;
+
+    background-color: #F3De8A;
+}
+
+.vid-ctrl-btn-play {
+    height: 120px;
+    width: 120px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    line-height: 60px;
+
     font-size: 5rem;
-    border-radius: 50px
+    border-radius: 50px;
+
+    background-color: #F3De8A;
+}
+
+.vid-ctrl-btn-rmv {
+    height: 120px;
+    width: 120px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    line-height: 80px; 
+
+    font-size: 10rem;
+    border-radius: 50px;
+
+    background-color: #F3De8A;
 }

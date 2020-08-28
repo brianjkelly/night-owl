@@ -9,12 +9,14 @@
     padding-top: 14px;
     align-items: center;
     background: #B2792E;
+    border-radius: 20px;
 }
 
 .q-title {
     font-size: 1.2rem;
     font-weight: bold;
     margin-right: 18px;
+    margin-left: 12px;
 }
 
 .q-rmv-btn, .q-video-play-btn {
