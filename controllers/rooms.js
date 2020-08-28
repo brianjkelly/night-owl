@@ -42,7 +42,6 @@ function deleteFromQueue(req, res) {
 function updateLoadedVideo(req, res) {
     try {
         const room = videoRooms.find(({ roomId }) => roomId === req.params.id);
-        console.log(req.body);
         room.selectedVideo = req.body;
         room.loadedVideo = req.body;
         res.json(room);

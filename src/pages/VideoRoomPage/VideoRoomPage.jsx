@@ -1,4 +1,6 @@
 import React from 'react';
+import io from 'socket.io-client';
+
 import VideoSearch from '../../components/VideoSearch/VideoSearch';
 import VideoList from '../../components/VideoList/VideoList';
 import VideoQuList from '../../components/VideoQuList/VideoQuList';
@@ -10,10 +12,12 @@ import ButtonDisplay from '../../components/ButtonDisplay/ButtonDisplay';
 
 import './VideoRoomPage.css';
 
+
 class VideoRoomPage extends React.Component {
     constructor() {
         super();
         this.state = {
+            socket: null,
             roomId: null,
             leader: null,
             userList: null,
@@ -51,7 +55,8 @@ class VideoRoomPage extends React.Component {
 
         const response = await roomService.updateLoadedVideo(this.state.roomId, this.state.selectedVideo);
         const loadedVideo = response.loadedVideo;
-        this.setState({ loadedVideo })
+        this.state.socket.emit('play-video', loadedVideo);
+        this.setState({ loadedVideo });
     }
 
     handleAddToQ = async (e) => {
@@ -59,7 +64,7 @@ class VideoRoomPage extends React.Component {
 
         const response = await roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
         const queue = [...response.queue];
-
+        this.state.socket.emit('add-queue', queue);
         this.setState({ queue });
     }
 
@@ -68,6 +73,20 @@ class VideoRoomPage extends React.Component {
     }
 
     componentDidMount() {
+        const socket = io('localhost:3001');
+        socket.emit('join', { user: this.props.user.name, room: this.props.match.params.id }, error => {
+            console.log(error);
+        });
+
+        socket.on('unify-queue', queue => {
+            this.setState({ queue });
+        })
+
+        socket.on('unify-loadedVideo', loadedVideo => {
+            this.setState({ loadedVideo });
+        })
+
+        this.setState({ socket });
         this.setState({ roomId: this.props.match.params.id });
     }
 
@@ -120,6 +139,7 @@ class VideoRoomPage extends React.Component {
                                         className="video-chatbox"
                                         user={this.props.user.name}
                                         roomId={this.state.roomId}
+                                        socket={this.state.socket}
                                     />
                                 </div>
                             </div>

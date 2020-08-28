@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import io from 'socket.io-client';
 
 import MessageBox from '../MessageBox/MessageBox';
 import TextBox from '../TextBox/TextBox';
 
-let socket;
 
 const ChatRoom = (props) => {
     const [msg, setMsg] = useState('');
@@ -14,23 +12,19 @@ const ChatRoom = (props) => {
     useEffect(() => {
         const user = props.user;
         const room = props.roomId;
-        socket = io('localhost:3001');
-        socket.emit('join', { user, room }, error => {
-            console.log(error);
-        });
-        socket.on('chat message', msg => {
+        props.socket.on('chat message', msg => {
             setHistory(msgHistory => [...msgHistory, user + ": " + msg]);
         });
-        socket.on('update-user-list', users => {
+        props.socket.on('update-user-list', users => {
             setUserList(users);
         });
-        socket.emit('register-user', user);
+        props.socket.emit('register-user', user);
 
     }, [props.roomId]);
 
     const sendMessage = (e) => {
         e.preventDefault();
-        socket.emit('chat message', e.target[0].value, () => setMsg(''));
+        props.socket.emit('chat message', e.target[0].value, () => setMsg(''));
     }
 
     return (
