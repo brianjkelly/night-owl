@@ -12,12 +12,15 @@ const ChatRoom = (props) => {
 
     useEffect(() => {
         const user = props.user;
-        props.socket.on('chat message', msg => {
+
+        props.socket.on('chat message', ({ user, msg }) => {
             setHistory(msgHistory => [...msgHistory, user + ": " + msg]);
         });
+
         props.socket.on('update-user-list', users => {
             setUserList(users);
         });
+
         props.socket.emit('register-user', user);
 
     }, [props.roomId]);

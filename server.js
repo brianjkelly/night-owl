@@ -74,7 +74,7 @@ io.sockets.on('connection', socket => {
             io.to(room).emit('unify-loadedVideo', loadedVideo);
         })
 
-        socket.on('chat message', (msg, cb) => {
+        socket.on('chat message', ({ user, msg }, cb) => {
             console.log(`${user} sent ${msg}`);
             io.to(room).emit('chat message', msg);
             cb();
