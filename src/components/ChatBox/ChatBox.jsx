@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import MessageBox from '../MessageBox/MessageBox';
 import TextBox from '../TextBox/TextBox';
+import './ChatBox.css';
 
 
 const ChatRoom = (props) => {
