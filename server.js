@@ -66,6 +66,10 @@ io.sockets.on('connection', socket => {
             io.to(room).emit('unify-queue', queue);
         })
 
+        socket.on('remove-queue', queue => {
+            io.to(room).emit('unify-queue', queue);
+        })
+
         socket.on('play-video', loadedVideo => {
             io.to(room).emit('unify-loadedVideo', loadedVideo);
         })

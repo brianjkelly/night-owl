@@ -11,7 +11,6 @@ import roomService from '../../utils/roomService';
 import ButtonDisplay from '../../components/ButtonDisplay/ButtonDisplay';
 
 import './VideoRoomPage.css';
-import { Redirect } from 'react-router-dom';
 
 
 class VideoRoomPage extends React.Component {
@@ -39,14 +38,18 @@ class VideoRoomPage extends React.Component {
 
     handleRemoveFromQ = async (e) => {
         e.preventDefault();
+        if (this.state.selectedVideo === null || e.target[0].value === '') {
+            return;
+        }
 
         let payload = {};
         payload.idx = e.target[0].value;
-        payload.video = this.state.quSelectedVideo;
+        payload.video = this.state.selectedVideo;
 
         const response = await roomService.deleteQueueVideo(this.state.roomId, payload);
         const queue = [...response.queue];
 
+        this.state.socket.emit('remove-queue', queue);
         this.setState({ queue })
         this.setState({ quSelectedVideo: null });
     }
@@ -58,6 +61,7 @@ class VideoRoomPage extends React.Component {
         }
         const response = await roomService.updateLoadedVideo(this.state.roomId, this.state.selectedVideo);
         const loadedVideo = response.loadedVideo;
+
         this.state.socket.emit('play-video', loadedVideo);
         this.setState({ loadedVideo });
     }
@@ -69,6 +73,7 @@ class VideoRoomPage extends React.Component {
         }
         const response = await roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
         const queue = [...response.queue];
+
         this.state.socket.emit('add-queue', queue);
         this.setState({ queue });
     }
@@ -94,10 +99,8 @@ class VideoRoomPage extends React.Component {
 
         try {
             const roomFetch = await roomService.populate(this.props.match.params.id);
-            console.log(roomFetch);
             this.setState({ roomId: this.props.match.params.id });
             this.setState({ ...roomFetch });
-            console.log(this.state);
         } catch (err) {
             this.props.history.push('/lobby');
         }
