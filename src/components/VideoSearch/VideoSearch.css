@@ -7,7 +7,7 @@
     padding-top: 14px;
     padding-bottom: 14px;
     align-items: center;
-    background: #707070;
+    background: #b7beb8ea;
     margin-top: -8px;
     margin-bottom: 14px;
     margin-left: -8px;
@@ -24,6 +24,7 @@
 
 .h-logo {
     margin-right: 50px;
+    margin-top: 0;
 }
 
 .room-hdr {
