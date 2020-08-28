@@ -5,12 +5,13 @@ import TextBox from '../TextBox/TextBox';
 
 
 const ChatRoom = (props) => {
+    const [user, setUser] = useState('');
     const [msg, setMsg] = useState('');
     const [msgHistory, setHistory] = useState([]);
     const [userList, setUserList] = useState([]);
 
     useEffect(() => {
-        const user = props.user;
+        setUser(props.user);
         props.socket.on('chat message', msg => {
             setHistory(msgHistory => [...msgHistory, user + ": " + msg]);
         });
