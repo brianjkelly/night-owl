@@ -6,6 +6,8 @@ import VideoDetail from '../../components/VideoDetail/VideoDetail';
 import youtubeAPI from '../../utils/youtube-api';
 import ChatBox from '../../components/ChatBox/ChatBox';
 import roomService from '../../utils/roomService';
+import ButtonDisplay from '../../components/ButtonDisplay/ButtonDisplay';
+
 import './VideoRoomPage.css';
 
 class VideoRoomPage extends React.Component {
@@ -88,6 +90,13 @@ class VideoRoomPage extends React.Component {
                                         queue={this.state.queue}
                                         handleVideoSelect={this.handleVideoSelect}
                                         selectedVideo={this.state.selectedVideo}
+                                        handleRemoveFromQ={this.handleRemoveFromQ}
+                                    />
+                                </div>
+                                <div className="btn-display">
+                                    <ButtonDisplay 
+                                        handleAddToQ={this.handleAddToQ}
+                                        handlePlayBtn={this.handlePlayBtn}
                                         handleRemoveFromQ={this.handleRemoveFromQ}
                                     />
                                 </div>

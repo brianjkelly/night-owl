@@ -1,0 +1,9 @@
+.vid-ctrl-btn {
+    height: 120px;
+    width: 120px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-size: 5rem;
+    border-radius: 50px
+}
