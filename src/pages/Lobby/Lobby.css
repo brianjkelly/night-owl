@@ -5,7 +5,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 
@@ -34,9 +34,15 @@
     border-radius: 5px;
     margin: 0.1rem;
     padding: 0.1rem;
-    /* border: 0.4rem outset grey;
-    border-radius: 12px;
-    margin: 0.1rem;
-    padding: 0.1rem;
-    outline-offset: 0.1rem; */
   } 
+
+  .link {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  

@@ -9,3 +9,15 @@
     align-items: center;
     margin-bottom: 50px;
   }
+
+
+  .link {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
