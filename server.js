@@ -42,30 +42,42 @@ const server = app.listen(port, () => {
 
 // Establish socket.io connection
 const io = require('socket.io').listen(server);
-io.sockets.on('connection', (socket) => {
+io.sockets.on('connection', socket => {
     console.log('user connected');
 
-    socket.on('register-user', function(name) {
+    socket.on('register-user', name => {
         console.log(name);
         users[socket.id] = name;
         io.emit('update-user-list', Object.values(users));
     });
 
-    socket.on('disconnect', function() {
+    socket.on('disconnect', () => {
         delete users[socket.id];
         io.emit('update-user-list', Object.values(users));
     });
 
+
+
     socket.on('join', ({ user, room }, error) => {
-        console.log(`${user} attempting to join ${room}`);
         socket.join(room);
         io.to(room).emit('chat message', `${user} has joined ${room}`);
-        error();
+
+        socket.on('add-queue', queue => {
+            io.to(room).emit('unify-queue', queue);
+        })
+
+        socket.on('play-video', loadedVideo => {
+            io.to(room).emit('unify-loadedVideo', loadedVideo);
+        })
+
         socket.on('chat message', (msg, cb) => {
             console.log(`${user} sent ${msg}`);
             io.to(room).emit('chat message', msg);
             cb();
+
         });
+
+        error();
     });
     socket.on('disconnect', () => {
         console.log('user disconnected')

@@ -4,6 +4,7 @@ module.exports = {
     create,
     queueVideo,
     deleteFromQueue,
+    updateLoadedVideo
 }
 
 const videoRooms = [];
@@ -30,11 +31,20 @@ function queueVideo(req, res) {
 
 function deleteFromQueue(req, res) {
     try {
-        console.log("Attempting to delete");
         const room = videoRooms.find(({ roomId }) => roomId === req.params.id);
         room.queue.splice([req.body.idx], 1);
-        console.log(room);
         res.json(room)
+    } catch (err) {
+        res.status(400).json('Something went wrong.');
+    }
+}
+
+function updateLoadedVideo(req, res) {
+    try {
+        const room = videoRooms.find(({ roomId }) => roomId === req.params.id);
+        room.selectedVideo = req.body;
+        room.loadedVideo = req.body;
+        res.json(room);
     } catch (err) {
         res.status(400).json('Something went wrong.');
     }

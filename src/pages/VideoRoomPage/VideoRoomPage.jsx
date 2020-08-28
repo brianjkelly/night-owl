@@ -1,4 +1,6 @@
 import React from 'react';
+import io from 'socket.io-client';
+
 import VideoSearch from '../../components/VideoSearch/VideoSearch';
 import VideoList from '../../components/VideoList/VideoList';
 import VideoQuList from '../../components/VideoQuList/VideoQuList';
@@ -10,10 +12,12 @@ import ButtonDisplay from '../../components/ButtonDisplay/ButtonDisplay';
 
 import './VideoRoomPage.css';
 
+
 class VideoRoomPage extends React.Component {
     constructor() {
         super();
         this.state = {
+            socket: null,
             roomId: null,
             leader: null,
             userList: null,
@@ -25,8 +29,16 @@ class VideoRoomPage extends React.Component {
         }
     }
 
+    handleFormSubmit = async (keywordFromSearch) => {
+        const response = await youtubeAPI(keywordFromSearch);
+        this.setState({
+            videos: response.items
+        });
+    }
+
     handleRemoveFromQ = async (e) => {
         e.preventDefault();
+
         let payload = {};
         payload.idx = e.target[0].value;
         payload.video = this.state.quSelectedVideo;
@@ -38,24 +50,22 @@ class VideoRoomPage extends React.Component {
         this.setState({ quSelectedVideo: null });
     }
 
-    handlePlayBtn = (e) => {
+    handlePlayBtn = async (e) => {
         e.preventDefault();
-        const loadedVideo = this.state.selectedVideo
-        this.setState({ loadedVideo })
+
+        const response = await roomService.updateLoadedVideo(this.state.roomId, this.state.selectedVideo);
+        const loadedVideo = response.loadedVideo;
+        this.state.socket.emit('play-video', loadedVideo);
+        this.setState({ loadedVideo });
     }
 
     handleAddToQ = async (e) => {
         e.preventDefault();
+
         const response = await roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
         const queue = [...response.queue];
+        this.state.socket.emit('add-queue', queue);
         this.setState({ queue });
-    }
-
-    handleFormSubmit = async (keywordFromSearch) => {
-        const response = await youtubeAPI(keywordFromSearch);
-        this.setState({
-            videos: response.items
-        });
     }
 
     handleVideoSelect = (video) => {
@@ -63,6 +73,20 @@ class VideoRoomPage extends React.Component {
     }
 
     componentDidMount() {
+        const socket = io('localhost:3001');
+        socket.emit('join', { user: this.props.user.name, room: this.props.match.params.id }, error => {
+            console.log(error);
+        });
+
+        socket.on('unify-queue', queue => {
+            this.setState({ queue });
+        })
+
+        socket.on('unify-loadedVideo', loadedVideo => {
+            this.setState({ loadedVideo });
+        })
+
+        this.setState({ socket });
         this.setState({ roomId: this.props.match.params.id });
     }
 
@@ -94,7 +118,7 @@ class VideoRoomPage extends React.Component {
                                     />
                                 </div>
                                 <div className="btn-display">
-                                    <ButtonDisplay 
+                                    <ButtonDisplay
                                         handleAddToQ={this.handleAddToQ}
                                         handlePlayBtn={this.handlePlayBtn}
                                         handleRemoveFromQ={this.handleRemoveFromQ}
@@ -115,6 +139,7 @@ class VideoRoomPage extends React.Component {
                                         className="video-chatbox"
                                         user={this.props.user.name}
                                         roomId={this.state.roomId}
+                                        socket={this.state.socket}
                                     />
                                 </div>
                             </div>
