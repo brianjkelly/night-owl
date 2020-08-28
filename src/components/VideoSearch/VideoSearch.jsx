@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OwlLogo from '../../components/OwlLogo/OwlLogo';
 import './VideoSearch.css';
 
 class VideoSearch extends Component {
@@ -25,7 +26,9 @@ class VideoSearch extends Component {
     render() {
         return(
             <div className="video-search">
-                <div className="h-logo">INSERT LOGO HERE</div>
+                <div className="h-logo">
+                    <div><OwlLogo /></div>
+                </div>
                 <div className="room-hdr">Welcome to Room #{this.props.roomId}</div>
                 <span className="search-title">Search Videos:</span>
                 <form className="video-search-form" onSubmit={this.handleSubmit}>
