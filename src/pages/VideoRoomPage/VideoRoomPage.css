@@ -1,5 +1,4 @@
 .video-display {
-    /* set margin-top: to whatever the top nav-heigh ends up being */
     display: grid;
     grid: auto/auto;
     padding-left: 24px;
