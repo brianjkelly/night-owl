@@ -9,6 +9,7 @@
     justify-content: space-between;
     background: whitesmoke;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 /* .user-display {
