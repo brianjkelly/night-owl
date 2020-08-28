@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import './ChatBox.css'
 import MessageBox from '../MessageBox/MessageBox';
 import TextBox from '../TextBox/TextBox';
 import './ChatBox.css';
