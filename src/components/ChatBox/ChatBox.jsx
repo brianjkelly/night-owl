@@ -11,7 +11,6 @@ const ChatRoom = (props) => {
 
     useEffect(() => {
         const user = props.user;
-        const room = props.roomId;
         props.socket.on('chat message', msg => {
             setHistory(msgHistory => [...msgHistory, user + ": " + msg]);
         });

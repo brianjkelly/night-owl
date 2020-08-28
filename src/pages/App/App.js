@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, Redirect} from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -36,13 +36,13 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path='/' render={() =>
-            userService.getUser() ?
-            <LandingPage
-              handleLogout={this.handleLogout}
-              user={this.state.user}
-            />
-            :
-            <Redirect to='/lobby' />
+            !userService.getUser() ?
+              <LandingPage
+                handleLogout={this.handleLogout}
+                user={this.state.user}
+              />
+              :
+              <Redirect to='/lobby' />
           } />
           <Route exact path='/login' render={({ history }) =>
             <LoginPage
@@ -58,14 +58,14 @@ class App extends Component {
           } />
           <Route exact path={'/videorooms/:id'} render={(props) => (
             userService.getUser() ?
-            <VideoRoomPage
-              {...props}
-              user={this.state.user}
-            />
-            :
-            <Redirect to='login' />
+              <VideoRoomPage
+                {...props}
+                user={this.state.user}
+              />
+              :
+              <Redirect to='login' />
           )} />
-          <Route exact pat='/lobby' render={({ history }) =>
+          <Route exact path='/lobby' render={({ history }) =>
             <Lobby
               history={history}
               user={this.state.user}
@@ -74,7 +74,7 @@ class App extends Component {
           } />
           <Route exact path='/logo' render={() =>
             <NightOwlLogo />
-        } />
+          } />
         </Switch>
       </div>
     );
