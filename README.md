@@ -1,7 +1,7 @@
 
 ## `Welcome to Night Owl`
 
-Night Owl is the brainchild of three General Assembly Students Aaron Rascon, Brian Kelly, and Austin Ferrin. In the time of Covid we wanted to be able to bring people together on a purly social platform away from work video calls and madding family group chats you never wanted to be a part of. Night Owl is an App that allows you and your friends to be able to watch anything on Youtube and chat with eachother in real time. It has a retro feel in nature and is here for you endless viewing needs. 
+Night Owl is the brainchild of three General Assembly Students Aaron Rascon, Brian Kelly, and Austin Ferrin. In the time of Covid we wanted to be able to bring people together on a purly social platform away from work video calls and madding family group chats you never wanted to be a part of. Night Owl is an App that allows you and your friends to be able to watch anything on Youtube and chat with eachother in real time. It has a retro feel in nature and is here for you endless viewing needs. Please feel free to visit <a href="https://seir629-nightowl.herokuapp.com/">Night Owl</a>
 
 ![Imgur](https://i.imgur.com/ZmZOQ1u.png)
 
