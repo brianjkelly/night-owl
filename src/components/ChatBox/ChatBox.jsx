@@ -9,7 +9,7 @@ let socket;
 const ChatRoom = (props) => {
     const [msg, setMsg] = useState('');
     const [msgHistory, setHistory] = useState([]);
-    const usernames = useState([])
+    const [userList, setUserList] = useState([]);
 
     useEffect(() => {
         const user = props.user;
@@ -21,7 +21,9 @@ const ChatRoom = (props) => {
         socket.on('chat message', msg => {
             setHistory(msgHistory => [...msgHistory, user + ": " + msg]);
         });
-
+        socket.on('update-user-list', users => {
+            setUserList(users);
+        });
         socket.emit('register-user', user);
 
     }, [props.roomId]);
@@ -34,13 +36,14 @@ const ChatRoom = (props) => {
     }
 
     return (
-        <div className = "chat-box">
-            <div className = "message-box">
+        <div className="chat-box">
+            <div className="message-box">
                 <MessageBox
+                    userList={userList}
                     msgHistory={msgHistory}
                 />
             </div>
-            <div className = "text-box">
+            <div className="text-box">
                 <TextBox
                     msg={msg}
                     setMsg={setMsg}

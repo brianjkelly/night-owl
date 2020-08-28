@@ -25,6 +25,13 @@ class VideoRoomPage extends React.Component {
         }
     }
 
+    handleFormSubmit = async (keywordFromSearch) => {
+        const response = await youtubeAPI(keywordFromSearch);
+        this.setState({
+            videos: response.items
+        });
+    }
+
     handleRemoveFromQ = async (e) => {
         e.preventDefault();
 
@@ -60,13 +67,6 @@ class VideoRoomPage extends React.Component {
         this.setState({ selectedVideo: video });
     }
 
-    handleFormSubmit = async (keywordFromSearch) => {
-        const response = await youtubeAPI(keywordFromSearch);
-        this.setState({
-            videos: response.items
-        });
-    }
-
     componentDidMount() {
         this.setState({ roomId: this.props.match.params.id });
     }
@@ -99,7 +99,7 @@ class VideoRoomPage extends React.Component {
                                     />
                                 </div>
                                 <div className="btn-display">
-                                    <ButtonDisplay 
+                                    <ButtonDisplay
                                         handleAddToQ={this.handleAddToQ}
                                         handlePlayBtn={this.handlePlayBtn}
                                         handleRemoveFromQ={this.handleRemoveFromQ}
