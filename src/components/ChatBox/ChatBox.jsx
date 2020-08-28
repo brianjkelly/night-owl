@@ -28,8 +28,6 @@ const ChatRoom = (props) => {
 
     }, [props.roomId]);
 
-
-
     const sendMessage = (e) => {
         e.preventDefault();
         socket.emit('chat message', e.target[0].value, () => setMsg(''));

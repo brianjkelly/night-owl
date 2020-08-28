@@ -9,11 +9,13 @@
     padding-top: 14px;
     align-items: center;
     background: #B2792E;
+    border-radius: 20px;
 }
 
-.title {
+.vs-title {
     font-size: 1.2rem;
     font-weight: bold;
+    margin-left: 12px;
 }
 
 .video-add-btn, .video-play-btn {
