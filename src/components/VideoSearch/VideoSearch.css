@@ -12,8 +12,9 @@
     margin-right: -8px;
 }
 
-.title {
+.search-title {
     font-size: 1.2rem;
     font-weight: bold;
     margin-right: 14px;
+    color: black;
 }
