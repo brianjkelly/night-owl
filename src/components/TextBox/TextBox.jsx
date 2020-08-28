@@ -1,8 +1,9 @@
 import React from 'react';
+import './TextBox.css';
 
 const TextBox = (props) => {
     return (
-        <div>
+        <div className="text-box-d">
             <form onSubmit={e => props.sendMessage(e)}>
                 <input
                     type="text"

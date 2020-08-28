@@ -14,7 +14,8 @@
 }
 
 .video-item:hover {
-    background-color: #6883BA
+    background-color: #6883BA;
+    cursor: pointer;
 }
 
 .video-image-container {
