@@ -40,7 +40,7 @@ class Lobby extends React.Component {
                 handleLogout={this.props.handleLogout}
                 />
                <form className="room-id-form" onSubmit={this.handleSubmit}>
-                    <input
+                    <input className="room-id-form"
                         type="text"
                         name="room-id"
                         value={this.state.keyword}

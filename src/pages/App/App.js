@@ -57,10 +57,13 @@ class App extends Component {
             />
           } />
           <Route exact path={'/videorooms/:id'} render={(props) => (
+            userService.getUser() ?
             <VideoRoomPage
               {...props}
               user={this.state.user}
             />
+            :
+            <Redirect to='login' />
           )} />
           <Route exact pat='/lobby' render={({ history }) =>
             <Lobby
