@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 
 import MessageBox from '../MessageBox/MessageBox';
 import TextBox from '../TextBox/TextBox';
-import './ChatBox.css'
+import './ChatBox.css';
 
 
 const ChatRoom = (props) => {
+    const [user, setUser] = useState('');
     const [msg, setMsg] = useState('');
     const [msgHistory, setHistory] = useState([]);
     const [userList, setUserList] = useState([]);
 
     useEffect(() => {
-        const user = props.user;
+        setUser(prevUser => prevUser = props.user);
 
         props.socket.on('chat message', ({ user, msg }) => {
             setHistory(msgHistory => [...msgHistory, user + ": " + msg]);
@@ -27,6 +28,7 @@ const ChatRoom = (props) => {
 
     const sendMessage = (e) => {
         e.preventDefault();
+        console.log(user + " " + e.target[0].value);
         props.socket.emit('chat message', { user, msg: e.target[0].value }, () => setMsg(''));
     }
 
