@@ -33,10 +33,11 @@ Night Owl started their planning using <a href="https://trello.com/b/tb68wuwn/yo
 
 ### `Unsolved Problems`
 
-
+We wanted to be able to select an individual video by the index and remove it from the video Que but due to some functionality we are not currently able to. 
 
 
 ### `Future Enhancements`
 
+One feature for our stretch goals was to be able to highlight the background of the current or active video. 
 
 

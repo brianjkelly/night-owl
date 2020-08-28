@@ -26,7 +26,7 @@ class VideoRoom {
     }
 
     generateId() {
-        let id = 'Daddy';
+        let id = '';
         const chars = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890';
         for (let i = 0; i < 8; i++) {
             id += chars.charAt(Math.floor(Math.random() * chars.length));
