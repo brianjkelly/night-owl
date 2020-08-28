@@ -13,6 +13,10 @@
     border-radius: 5px;
 }
 
+.video-item:hover {
+    background-color: #6883BA
+}
+
 .video-image-container {
     position: relative;
     grid-row: 1 / 2;
