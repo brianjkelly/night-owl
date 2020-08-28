@@ -2,6 +2,7 @@ import React from 'react';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import VideoInfobox from '../VideoInfobox/VideoInfobox';
 import VideoMetadata from '../VideoMetadata/VideoMetadata';
+import './VideoDetail.css'
 
 
 const VideoDetail = ({ loadedVideo }) => {

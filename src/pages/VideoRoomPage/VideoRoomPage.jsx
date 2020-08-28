@@ -115,6 +115,7 @@ class VideoRoomPage extends React.Component {
                         <div>
                             <VideoSearch
                                 handleFormSubmit={this.handleFormSubmit}
+                                roomId={this.state.roomId}
                             />
                             <div className="video-display">
                                 <div className="video-grid-container">

@@ -1,0 +1,8 @@
+.v-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: #707070;
+    margin-top: -12px;
+    border-radius: 5px;
+}
