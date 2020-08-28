@@ -38,7 +38,7 @@ class VideoRoomPage extends React.Component {
 
     handleRemoveFromQ = async (e) => {
         e.preventDefault();
-        if (this.state.selectedVideo === null || e.target[0].value === '') {
+        if (this.state.selectedVideo === null) {
             return;
         }
 
