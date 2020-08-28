@@ -25,7 +25,8 @@ class VideoSearch extends Component {
     render() {
         return(
             <div className="video-search">
-                <div className="h-logo">PLACE LOGO HERE</div>
+                <div className="h-logo">INSERT LOGO HERE</div>
+                <div className="room-hdr">Welcome to Room #{this.props.roomId}</div>
                 <span className="search-title">Search Videos:</span>
                 <form className="video-search-form" onSubmit={this.handleSubmit}>
                     <input 
