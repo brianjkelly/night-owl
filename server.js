@@ -60,7 +60,7 @@ io.sockets.on('connection', socket => {
 
     socket.on('join', ({ user, room }) => {
         socket.join(room);
-        io.to(room).emit('chat message', `${user} has joined ${room}`);
+        io.to(room).emit('chat message', { user, msg: `${user} has joined ${room}` });
 
         socket.on('add-queue', queue => {
             io.to(room).emit('unify-queue', queue);
@@ -75,8 +75,7 @@ io.sockets.on('connection', socket => {
         })
 
         socket.on('chat message', ({ user, msg }, cb) => {
-            console.log(`${user} sent ${msg}`);
-            io.to(room).emit('chat message', msg);
+            io.to(room).emit('chat message', { user, msg });
             cb();
 
         });
