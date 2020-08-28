@@ -13,6 +13,11 @@
     background-color: seagreen;
 }
 
+.vid-ctrl-btn-add:hover {
+    cursor: pointer;
+    background-color: yellow;
+}
+
 .vid-ctrl-btn-play {
     height: 120px;
     width: 120px;
@@ -28,6 +33,11 @@
     background-color: seagreen;
 }
 
+.vid-ctrl-btn-play:hover {
+    cursor: pointer;
+    background-color: yellow;
+}
+
 .vid-ctrl-btn-rmv {
     height: 120px;
     width: 120px;
@@ -41,4 +51,9 @@
     border-radius: 50px;
 
     background-color: seagreen;
+}
+
+.vid-ctrl-btn-rmv:hover {
+    cursor: pointer;
+    background-color: yellow;
 }
