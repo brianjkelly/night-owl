@@ -11,6 +11,7 @@ import roomService from '../../utils/roomService';
 import ButtonDisplay from '../../components/ButtonDisplay/ButtonDisplay';
 
 import './VideoRoomPage.css';
+import { Redirect } from 'react-router-dom';
 
 
 class VideoRoomPage extends React.Component {
@@ -52,7 +53,9 @@ class VideoRoomPage extends React.Component {
 
     handlePlayBtn = async (e) => {
         e.preventDefault();
-
+        if (this.state.selectedVideo === null) {
+            return;
+        }
         const response = await roomService.updateLoadedVideo(this.state.roomId, this.state.selectedVideo);
         const loadedVideo = response.loadedVideo;
         this.state.socket.emit('play-video', loadedVideo);
@@ -61,7 +64,9 @@ class VideoRoomPage extends React.Component {
 
     handleAddToQ = async (e) => {
         e.preventDefault();
-
+        if (this.state.selectedVideo === null) {
+            return;
+        }
         const response = await roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
         const queue = [...response.queue];
         this.state.socket.emit('add-queue', queue);
@@ -72,7 +77,7 @@ class VideoRoomPage extends React.Component {
         this.setState({ selectedVideo: video });
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         const socket = io('localhost:3001');
         socket.emit('join', { user: this.props.user.name, room: this.props.match.params.id }, error => {
             console.log(error);
@@ -85,9 +90,17 @@ class VideoRoomPage extends React.Component {
         socket.on('unify-loadedVideo', loadedVideo => {
             this.setState({ loadedVideo });
         })
-
         this.setState({ socket });
-        this.setState({ roomId: this.props.match.params.id });
+
+        try {
+            const roomFetch = await roomService.populate(this.props.match.params.id);
+            console.log(roomFetch);
+            this.setState({ roomId: this.props.match.params.id });
+            this.setState({ ...roomFetch });
+            console.log(this.state);
+        } catch (err) {
+            this.props.history.push('/lobby');
+        }
     }
 
     render() {

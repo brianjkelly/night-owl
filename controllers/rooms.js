@@ -1,6 +1,7 @@
 const VideoRoom = require('../room').VideoRoom;
 
 module.exports = {
+    populate,
     create,
     queueVideo,
     deleteFromQueue,
@@ -9,11 +10,20 @@ module.exports = {
 
 const videoRooms = [];
 
+function populate(req, res) {
+    const room = videoRooms.find(({ roomId }) => roomId === req.params.id);
+    if (room) {
+        res.json(room);
+    } else {
+        res.status(400).json('Something went wrong.');
+    }
+}
+
 function create(req, res) {
     try {
-        const roomRes = new VideoRoom(req.body.name);
-        videoRooms.push(roomRes);
-        res.json(roomRes);
+        const room = new VideoRoom(req.body.name);
+        videoRooms.push(room);
+        res.json(room);
     } catch (err) {
         res.status(400).json('Something went wrong.');
     }

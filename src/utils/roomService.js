@@ -1,3 +1,13 @@
+function populate(id) {
+    return fetch(`/api/rooms/${id}`, {
+        method: 'GET',
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+    }).then(res => {
+        if (res.ok) return res.json();
+        throw new Error('No room exists');
+    });
+}
+
 function createRoom(leader) {
     return fetch('/api/rooms/', {
         method: 'POST',
@@ -44,6 +54,7 @@ function updateLoadedVideo(id, video) {
 
 
 export default {
+    populate,
     createRoom,
     queueVideo,
     deleteQueueVideo,
