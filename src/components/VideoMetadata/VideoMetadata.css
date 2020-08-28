@@ -2,5 +2,15 @@
     color: #111111;
     font-size: 16px;
     font-weight: 400;
+    
+    
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+h3 {
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 10px;
     background: #B2792E;
 }

@@ -3,7 +3,13 @@
     grid: auto auto / 58px auto max-content;
     align-items: center;
     grid-row-gap: 16px;
-    background: #707070;
+    background: #9FB196;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 6px;
 }
 
 .video-info-desc {
