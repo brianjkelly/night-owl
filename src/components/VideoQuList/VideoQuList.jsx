@@ -1,9 +1,8 @@
 import React from 'react';
 import VideoItem from '../VideoItem/VideoItem';
-import RemoveButton from '../RemoveButton/RemoveButton';
 import './VideoQuList.css';
 
-const VideoQuList = ({ queue, selectedVideo, handleVideoSelect, handleRemoveFromQ }) => {
+const VideoQuList = ({ queue, selectedVideo, handleVideoSelect }) => {
     const queuedVideos = queue.map((qVideo, idx) => {
         return (
             <div key={'video-' + idx}>

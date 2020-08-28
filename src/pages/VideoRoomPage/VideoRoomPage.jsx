@@ -38,32 +38,42 @@ class VideoRoomPage extends React.Component {
 
     handleRemoveFromQ = async (e) => {
         e.preventDefault();
+        if (this.state.selectedVideo === null || e.target[0].value === '') {
+            return;
+        }
 
         let payload = {};
         payload.idx = e.target[0].value;
-        payload.video = this.state.quSelectedVideo;
+        payload.video = this.state.selectedVideo;
 
         const response = await roomService.deleteQueueVideo(this.state.roomId, payload);
         const queue = [...response.queue];
 
+        this.state.socket.emit('remove-queue', queue);
         this.setState({ queue })
         this.setState({ quSelectedVideo: null });
     }
 
     handlePlayBtn = async (e) => {
         e.preventDefault();
-
+        if (this.state.selectedVideo === null) {
+            return;
+        }
         const response = await roomService.updateLoadedVideo(this.state.roomId, this.state.selectedVideo);
         const loadedVideo = response.loadedVideo;
+
         this.state.socket.emit('play-video', loadedVideo);
         this.setState({ loadedVideo });
     }
 
     handleAddToQ = async (e) => {
         e.preventDefault();
-
+        if (this.state.selectedVideo === null) {
+            return;
+        }
         const response = await roomService.queueVideo(this.state.roomId, this.state.selectedVideo);
         const queue = [...response.queue];
+
         this.state.socket.emit('add-queue', queue);
         this.setState({ queue });
     }
@@ -72,7 +82,7 @@ class VideoRoomPage extends React.Component {
         this.setState({ selectedVideo: video });
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         const socket = io('localhost:3001');
         socket.emit('join', { user: this.props.user.name, room: this.props.match.params.id }, error => {
             console.log(error);
@@ -85,9 +95,15 @@ class VideoRoomPage extends React.Component {
         socket.on('unify-loadedVideo', loadedVideo => {
             this.setState({ loadedVideo });
         })
-
         this.setState({ socket });
-        this.setState({ roomId: this.props.match.params.id });
+
+        try {
+            const roomFetch = await roomService.populate(this.props.match.params.id);
+            this.setState({ roomId: this.props.match.params.id });
+            this.setState({ ...roomFetch });
+        } catch (err) {
+            this.props.history.push('/lobby');
+        }
     }
 
     render() {
